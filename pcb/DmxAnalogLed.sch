@@ -3885,6 +3885,7 @@ by exp-project-lbr.ulp</description>
 <part name="U$11" library="blinkiverse" deviceset="N_MOSFET" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="JP5" library="SparkFun" deviceset="M02" device="3.5MM"/>
+<part name="GND3" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3988,7 +3989,7 @@ by exp-project-lbr.ulp</description>
 <instance part="GND17" gate="1" x="273.05" y="-34.29"/>
 <instance part="JP2" gate="G$1" x="332.74" y="8.89" rot="R180"/>
 <instance part="JP3" gate="G$1" x="332.74" y="-19.05" rot="R180"/>
-<instance part="JP4" gate="G$1" x="-17.78" y="-73.66"/>
+<instance part="JP4" gate="G$1" x="-19.05" y="-71.12" rot="MR180"/>
 <instance part="U$10" gate="G$1" x="127" y="104.14"/>
 <instance part="P+8" gate="VCC" x="114.3" y="114.3"/>
 <instance part="GND20" gate="1" x="114.3" y="96.52"/>
@@ -4014,6 +4015,7 @@ by exp-project-lbr.ulp</description>
 <instance part="U$11" gate="G$1" x="264.16" y="-44.45"/>
 <instance part="GND8" gate="1" x="273.05" y="-49.53"/>
 <instance part="JP5" gate="G$1" x="335.28" y="-40.64" rot="R180"/>
+<instance part="GND3" gate="1" x="-2.54" y="-83.82"/>
 </instances>
 <busses>
 </busses>
@@ -4142,6 +4144,17 @@ by exp-project-lbr.ulp</description>
 <pinref part="U$11" gate="G$1" pin="S"/>
 <wire x1="270.51" y1="-46.99" x2="273.05" y2="-46.99" width="0.1524" layer="91"/>
 <pinref part="GND8" gate="1" pin="GND"/>
+</segment>
+<segment>
+<wire x1="-11.43" y1="-76.2" x2="-11.43" y2="-73.66" width="0.1524" layer="91"/>
+<wire x1="-11.43" y1="-76.2" x2="-2.54" y2="-76.2" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="-76.2" x2="-2.54" y2="-81.28" width="0.1524" layer="91"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+<pinref part="JP4" gate="G$1" pin="3"/>
+<wire x1="-13.97" y1="-73.66" x2="-11.43" y2="-73.66" width="0.1524" layer="91"/>
+<pinref part="JP4" gate="G$1" pin="4"/>
+<wire x1="-11.43" y1="-76.2" x2="-13.97" y2="-76.2" width="0.1524" layer="91"/>
+<junction x="-11.43" y="-76.2"/>
 </segment>
 </net>
 <net name="RX" class="0">
@@ -4477,9 +4490,9 @@ by exp-project-lbr.ulp</description>
 <label x="223.52" y="-17.78" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="(ICP1/ADC8)PD4"/>
-<wire x1="73.66" y1="10.16" x2="76.2" y2="10.16" width="0.1524" layer="91"/>
-<label x="76.2" y="10.16" size="1.778" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="(XCK1/#CTS)PD5"/>
+<wire x1="73.66" y1="12.7" x2="76.2" y2="12.7" width="0.1524" layer="91"/>
+<label x="76.2" y="12.7" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="PWM3" class="0">
@@ -4489,9 +4502,9 @@ by exp-project-lbr.ulp</description>
 <label x="223.52" y="-31.75" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="(XCK1/#CTS)PD5"/>
-<wire x1="73.66" y1="12.7" x2="76.2" y2="12.7" width="0.1524" layer="91"/>
-<label x="76.2" y="12.7" size="1.778" layer="95" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="(ICP1/ADC8)PD4"/>
+<wire x1="73.66" y1="10.16" x2="76.2" y2="10.16" width="0.1524" layer="91"/>
+<label x="76.2" y="10.16" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="PWM4" class="0">
@@ -4679,27 +4692,16 @@ by exp-project-lbr.ulp</description>
 <wire x1="326.39" y1="-40.64" x2="327.66" y2="-40.64" width="0.1524" layer="91"/>
 <junction x="326.39" y="-26.67"/>
 </segment>
-</net>
-<net name="N$10" class="0">
 <segment>
-<pinref part="JP4" gate="G$1" pin="2"/>
-<wire x1="-12.7" y1="-73.66" x2="-11.43" y2="-73.66" width="0.1524" layer="91"/>
-<pinref part="JP4" gate="G$1" pin="1"/>
-<wire x1="-12.7" y1="-76.2" x2="-11.43" y2="-76.2" width="0.1524" layer="91"/>
-<wire x1="-11.43" y1="-76.2" x2="-11.43" y2="-73.66" width="0.1524" layer="91"/>
-<wire x1="-11.43" y1="-73.66" x2="0" y2="-73.66" width="0.1524" layer="91"/>
-<junction x="-11.43" y="-73.66"/>
-</segment>
-</net>
-<net name="N$13" class="0">
-<segment>
-<pinref part="JP4" gate="G$1" pin="3"/>
-<wire x1="-12.7" y1="-71.12" x2="-11.43" y2="-71.12" width="0.1524" layer="91"/>
-<pinref part="JP4" gate="G$1" pin="4"/>
-<wire x1="-11.43" y1="-71.12" x2="0" y2="-71.12" width="0.1524" layer="91"/>
-<wire x1="-12.7" y1="-68.58" x2="-11.43" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="-11.43" y1="-68.58" x2="-2.54" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="-68.58" x2="-2.54" y2="-66.04" width="0.1524" layer="91"/>
 <wire x1="-11.43" y1="-68.58" x2="-11.43" y2="-71.12" width="0.1524" layer="91"/>
-<junction x="-11.43" y="-71.12"/>
+<label x="-2.54" y="-66.04" size="1.778" layer="95" rot="R90" xref="yes"/>
+<pinref part="JP4" gate="G$1" pin="2"/>
+<wire x1="-13.97" y1="-71.12" x2="-11.43" y2="-71.12" width="0.1524" layer="91"/>
+<pinref part="JP4" gate="G$1" pin="1"/>
+<wire x1="-11.43" y1="-68.58" x2="-13.97" y2="-68.58" width="0.1524" layer="91"/>
+<junction x="-11.43" y="-68.58"/>
 </segment>
 </net>
 <net name="GND_ISO" class="1">
