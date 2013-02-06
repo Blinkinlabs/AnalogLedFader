@@ -84,6 +84,7 @@ void SoftPWM::setupTimer() {
 void SoftPWM::begin() {
   setupOutputPins();
 
+  // TODO: memset the portnStates tables?
   for(uint8_t pwm = 0; pwm < pwmCount; pwm++) {
     setPWM(pwm, 0);
   }
