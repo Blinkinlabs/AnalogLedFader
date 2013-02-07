@@ -1,0 +1,4 @@
+For RevB release:
+- Implement CRC check
+- Implement addressing
+- Accept data from virtual and hardware serial port
