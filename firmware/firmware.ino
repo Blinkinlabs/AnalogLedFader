@@ -17,11 +17,6 @@ void setup() {
   receiver.reset();
   
   hardPWM.begin();
-  hardPWM.write(4, 1);
-  hardPWM.write(5, 2);
-//  softPWM.begin();
-//  softPWM.setPWM(0, 1);
-//  softPWM.setPWM(1, 2);
 }
 
 void loop() {
@@ -30,11 +25,9 @@ void loop() {
     if(receiver.parseByte(c)) {
       uint16_t* data = receiver.getPacket16();
       
-      hardPWM.write(4, data[0]);
-      hardPWM.write(5, data[1]);
-      
-//      softPWM.setPWM(0, data[0]);
-//      softPWM.setPWM(1, data[1]);
+      for(uint8_t i = 0; i < pwmCount; i++) {
+        hardPWM.write(i, data[i]);
+      }
     }
   }
 }

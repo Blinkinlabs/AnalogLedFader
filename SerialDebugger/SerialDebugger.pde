@@ -1,44 +1,140 @@
+import controlP5.*;
+
 import processing.serial.*;
 
+ControlP5 cp5;
 Serial outPort;
 
+String VERSION_STRING = "0.1";
+
+int NUMBER_OF_CHANNELS = 6;
+
+int[] values; // Light values to send
+
 void setup() {
-  size(1024,300);
-  frameRate(30);
+  size(600,300);
+  cp5 = new ControlP5(this);
   
-  String portName = "/dev/cu.usbmodem12341";
+  values = new int[NUMBER_OF_CHANNELS];
+  
+  String portName = "/dev/cu.usbmodem12341";  // TODO: How to request cu.* devices?
   
   println(portName);
   outPort = new Serial(this, portName, 115200);
+  
+  // Position controls
+  cp5.addToggle("rangeTest")
+   .setPosition(10,10)
+   ;
+  
+  cp5.addToggle("randomMotion")
+   .setPosition(10,50)
+   ;
+   
+  
+  for(int i = 0; i < NUMBER_OF_CHANNELS; i++) {
+    int speakersPerCol = 17;
+    
+    values[i] = 0;
+    
+    Slider s = cp5.addSlider("value[" + i + "]")
+     .setPosition(300 + (i/speakersPerCol)*250,10+(i%speakersPerCol)*35)
+     .setSize(180,30)
+     .setRange(0,65535)
+     .setSliderMode(Slider.FLEXIBLE)
+     .setDecimalPrecision(0)
+     .setValue(0)
+     ;
+
+    s.setValue(values[i]);
+    s.setId(i);
+  }
+  
+  // Debug info
+  cp5.addTextlabel("label1")
+    .setText("Debugger version " + VERSION_STRING)
+    .setPosition(10,265)
+    ;
+
+  if(portName != "") {
+    cp5.addTextlabel("label2")
+     .setText("Transmitting on " + portName)
+     .setPosition(10,280)
+     ;
+  } else {
+    cp5.addTextlabel("label2")
+     .setText("Could not find a port to transmit on!")
+     .setPosition(10,280)
+     ;
+  }   
 }
 
-void send10Bit(int a) {
-  outPort.write(a & 0xFF);  // Low byte
-  outPort.write((a >> 8) & 0x03);  // High byte
-}
 
-void sendUpdate(int a, int b) {
+void sendUpdate() {
   outPort.write(0xde);
   outPort.write(0xad);
-  outPort.write(2*2);
-  send10Bit(a);
-  send10Bit(b);
-  outPort.write(0xff);
+  outPort.write(NUMBER_OF_CHANNELS*2);
+  for(int i = 0; i < NUMBER_OF_CHANNELS; i++) {
+    outPort.write(values[i] & 0xFF);        // low byte
+    outPort.write((values[i] >> 8) & 0xFF); // high byte
+  }
+  outPort.write(0xff);  // TODO: Implement CRC
 }
 
+boolean rangeTest = false;
+boolean randomMotion = false;
 
-int vala = 0;
-int valb = 0;
+float   rangeTestToggleTime = 0;
+boolean rangeTestDirection  = false;
 
 void draw() {
-  sendUpdate(int(map(mouseX,0,width,0,1023)), int(map(mouseY,0,width,0,1023)));
-  println(int(map(mouseX,0,width,0,1023)));
+  background(0);
+  stroke(255);
+  
+  if(rangeTest) {
+    if(rangeTestToggleTime == 0) {
+      rangeTestToggleTime = millis();
+    }
+    
+    if(millis() > rangeTestToggleTime) {
+      int newPosition;
+      if(rangeTestDirection) {
+        newPosition = 0;
+      }
+      else {
+        newPosition = 65535;
+      }
+      
+      for(int i = 0; i < NUMBER_OF_CHANNELS; i++) {
+        values[i] = newPosition;
+      }
 
-  if(vala == 1) {
-    vala = 0;
-    valb = 0;
-  } else {
-    vala = 0;
-    valb = 150;
+      rangeTestToggleTime = millis() + 100;
+      rangeTestDirection = !rangeTestDirection;
+    }
+  }
+  
+  if(randomMotion) {
+    if(random(0,10)>8) {
+      values[(int)random(0,NUMBER_OF_CHANNELS-1)] = (int)random(0,65535);
+    } 
+  }
+  
+  sendUpdate();
+  println(values[0]);
+}
+
+void controlEvent(ControlEvent theEvent) {
+  if (theEvent.isController()) {    
+    // check if theEvent is coming from a position controller
+    if (theEvent.controller().name().startsWith("value")) {
+      // get the id of the controller and map the value
+      // to an element inside the boxsize array.
+      int id = theEvent.controller().id();
+      if (id>=0 && id<values.length) {
+        values[id] = (int)theEvent.value();
+      }
+    }
   }
 }
+
