@@ -128,11 +128,62 @@ uint8_t SoftPWM::readPWM(uint8_t pwm) {
 
 
 ISR(TIMER3_OVF_vect) {
-  do {
+  if(pwmStep == 0) {
+    PORTB = portBStates[0];  // Write out the pre-computed port states
+    PORTD = portDStates[0];  
+
+    PORTB = portBStates[1];  // Write out the pre-computed port states
+    PORTD = portDStates[1];
+    
+    PORTB = portBStates[2];  // Write out the pre-computed port states
+    PORTD = portDStates[2];
+    
+    PORTB = portBStates[3];  // Write out the pre-computed port states
+    PORTD = portDStates[3];
+    
+    PORTB = portBStates[4];  // Write out the pre-computed port states
+    PORTD = portDStates[4];
+    
+    PORTB = portBStates[5];  // Write out the pre-computed port states
+    PORTD = portDStates[5];  
+
+    PORTB = portBStates[6];  // Write out the pre-computed port states
+    PORTD = portDStates[6];
+    
+    PORTB = portBStates[7];  // Write out the pre-computed port states
+    PORTD = portDStates[7];
+    
+    PORTB = portBStates[8];  // Write out the pre-computed port states
+    PORTD = portDStates[8];
+    
+    PORTB = portBStates[9];  // Write out the pre-computed port states
+    PORTD = portDStates[9];
+    
+    PORTB = portBStates[10];  // Write out the pre-computed port states
+    PORTD = portDStates[10];  
+
+    PORTB = portBStates[11];  // Write out the pre-computed port states
+    PORTD = portDStates[11];
+    
+    PORTB = portBStates[12];  // Write out the pre-computed port states
+    PORTD = portDStates[12];
+    
+    PORTB = portBStates[13];  // Write out the pre-computed port states
+    PORTD = portDStates[13];
+    
+    PORTB = portBStates[14];  // Write out the pre-computed port states
+    PORTD = portDStates[14];
+    
+    PORTB = portBStates[15];  // Write out the pre-computed port states
+    PORTD = portDStates[15];  
+
+    pwmStep = 16
+  }
+  else {
     PORTB = portBStates[pwmStep];  // Write out the pre-computed port states
     PORTD = portDStates[pwmStep];
     pwmStep += 1;
-  } while (pwmStep < 16);
+  }
   
   OCR3AL = timerCounts[pwmStep-1];  // Set timer to next increment
   
