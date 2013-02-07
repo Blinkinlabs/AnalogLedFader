@@ -4,8 +4,7 @@
 #include <Arduino.h>
 
 #define MAX_DATA_SIZE       50       // Arbitrary
-#define WRAPPER_SIZE        2+1+2    // 2 header, 1 length, 2 crc
-#define MAX_PACKETLENGTH    MAX_DATA_SIZE + WRAPPER_SIZE // arbitrary?
+#define MAX_PACKETLENGTH    MAX_DATA_SIZE // arbitrary?
 
 #define MODE_HEADER0        0x0
 #define MODE_HEADER1        0x1
@@ -45,8 +44,11 @@ public:
   // @return true if a payload is ready to read
   boolean parseByte(uint8_t data);
   
-  // Get the 
+  // Get the packet data as an 8-bit array
   uint8_t* getPacket();
+
+  // Get the packet data as a 16-bit array
+  uint16_t* getPacket16();
 };
 
 #endif

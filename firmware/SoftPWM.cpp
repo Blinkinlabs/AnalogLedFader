@@ -18,7 +18,7 @@ volatile uint8_t pwmStep;  // current step in the PWM counter
 /*
 steps = 255
 maxValue = 255
-for i in range(0,steps):
+for i in range(0,steps-1):
   print int((i/(steps - 1.0))*(i/(steps - 1.0))*maxValue)+1, ',',
   if(i%10 == 9):
     print ''
@@ -86,7 +86,7 @@ void SoftPWM::begin() {
 
   // TODO: memset the portnStates tables?
   for(uint8_t pwm = 0; pwm < pwmCount; pwm++) {
-    setPWM(pwm, 0);
+    write(pwm, 0);
   }
   
   setupTimer();
@@ -116,13 +116,13 @@ void recalculatePWM(uint8_t pwm) {
 }
 
 
-void SoftPWM::setPWM(uint8_t pwm, uint8_t value) {
+void SoftPWM::write(uint8_t pwm, uint8_t value) {
   pwmValues[pwm] = value;
   
   recalculatePWM(pwm);
 }
 
-uint8_t SoftPWM::readPWM(uint8_t pwm) {
+uint8_t SoftPWM::read(uint8_t pwm) {
   return pwmValues[pwm];
 }
 
@@ -130,58 +130,79 @@ uint8_t SoftPWM::readPWM(uint8_t pwm) {
 ISR(TIMER3_OVF_vect) {
   if(pwmStep == 0) {
     PORTB = portBStates[0];  // Write out the pre-computed port states
-    PORTD = portDStates[0];  
+//    PORTD = portDStates[0];  
 
     PORTB = portBStates[1];  // Write out the pre-computed port states
-    PORTD = portDStates[1];
+//    PORTD = portDStates[1];
     
     PORTB = portBStates[2];  // Write out the pre-computed port states
-    PORTD = portDStates[2];
+//    PORTD = portDStates[2];
     
     PORTB = portBStates[3];  // Write out the pre-computed port states
-    PORTD = portDStates[3];
+//    PORTD = portDStates[3];
     
     PORTB = portBStates[4];  // Write out the pre-computed port states
-    PORTD = portDStates[4];
+//    PORTD = portDStates[4];
     
     PORTB = portBStates[5];  // Write out the pre-computed port states
-    PORTD = portDStates[5];  
+//    PORTD = portDStates[5];  
 
     PORTB = portBStates[6];  // Write out the pre-computed port states
-    PORTD = portDStates[6];
+//    PORTD = portDStates[6];
     
     PORTB = portBStates[7];  // Write out the pre-computed port states
-    PORTD = portDStates[7];
+//    PORTD = portDStates[7];
     
     PORTB = portBStates[8];  // Write out the pre-computed port states
-    PORTD = portDStates[8];
+//    PORTD = portDStates[8];
     
     PORTB = portBStates[9];  // Write out the pre-computed port states
-    PORTD = portDStates[9];
+//    PORTD = portDStates[9];
     
     PORTB = portBStates[10];  // Write out the pre-computed port states
-    PORTD = portDStates[10];  
+//    PORTD = portDStates[10];  
 
     PORTB = portBStates[11];  // Write out the pre-computed port states
-    PORTD = portDStates[11];
+//    PORTD = portDStates[11];
     
     PORTB = portBStates[12];  // Write out the pre-computed port states
-    PORTD = portDStates[12];
+//    PORTD = portDStates[12];
     
     PORTB = portBStates[13];  // Write out the pre-computed port states
-    PORTD = portDStates[13];
+//    PORTD = portDStates[13];
     
     PORTB = portBStates[14];  // Write out the pre-computed port states
-    PORTD = portDStates[14];
+//    PORTD = portDStates[14];
     
     PORTB = portBStates[15];  // Write out the pre-computed port states
-    PORTD = portDStates[15];  
+//    PORTD = portDStates[15];  
 
-    pwmStep = 16
+    PORTB = portBStates[16];  // Write out the pre-computed port states
+//    PORTD = portDStates[16];
+    
+    PORTB = portBStates[17];  // Write out the pre-computed port states
+//    PORTD = portDStates[17];
+    
+    PORTB = portBStates[18];  // Write out the pre-computed port states
+//    PORTD = portDStates[18];
+    
+    PORTB = portBStates[19];  // Write out the pre-computed port states
+//    PORTD = portDStates[19];
+    
+    PORTB = portBStates[20];  // Write out the pre-computed port states
+//    PORTD = portDStates[20];  
+
+    PORTB = portBStates[21];  // Write out the pre-computed port states
+//    PORTD = portDStates[21];
+    
+    PORTB = portBStates[22];  // Write out the pre-computed port states
+//    PORTD = portDStates[22];
+    
+    pwmStep = 22;
   }
   else {
     PORTB = portBStates[pwmStep];  // Write out the pre-computed port states
-    PORTD = portDStates[pwmStep];
+//    PORTD = portDStates[pwmStep];
     pwmStep += 1;
   }
   
