@@ -1,6 +1,2 @@
 For RevB release:
-- Switch to MicroUSB pad
-- front panel switch for termination
 - design to fit into a case
-- fix transistor drive circuit
-- Add pull-downs to drive circuit

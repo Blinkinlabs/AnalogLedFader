@@ -132,13 +132,13 @@
 </layers>
 <board>
 <plain>
-<text x="46.75" y="44.5" size="1.27" layer="25" rot="R180" align="bottom-center">Rev A</text>
+<text x="50" y="43" size="1.27" layer="25" font="vector" rot="R180" align="bottom-center">Rev A</text>
 <hole x="84" y="3" drill="3.2"/>
 <hole x="84" y="72" drill="3.2"/>
 <hole x="3" y="72" drill="3.2"/>
 <hole x="3" y="3" drill="3.2"/>
-<text x="46.75" y="42" size="1.27" layer="25" rot="R180" align="bottom-center">blinkiverse.com</text>
-<text x="46.5" y="46.75" size="1.27" layer="25" rot="R180" align="bottom-center">Analog LED Fader</text>
+<text x="50" y="41" size="1.778" layer="25" font="vector" rot="R180" align="bottom-center">blinkiverse.com</text>
+<text x="50" y="45.75" size="1.778" layer="25" font="vector" rot="R180" align="bottom-center">Analog LED Fader</text>
 <hole x="39" y="3" drill="3.2"/>
 <hole x="3" y="37.5" drill="3.2"/>
 <hole x="84" y="37.5" drill="3.2"/>
@@ -863,6 +863,22 @@ Please make sure your boards conform to these design rules.</description>
 <element name="C19" library="SparkFun" package="1210" value="?uF" x="5.5" y="41.25" rot="R90"/>
 <element name="C20" library="SparkFun" package="1210" value="?uF" x="5.5" y="33.5" rot="R270"/>
 <element name="C21" library="SparkFun" package="1210" value="?uF" x="5.5" y="28.5" rot="R90"/>
+<element name="R3" library="SparkFun" package="0805" value="10K" x="54.25" y="54" rot="R180"/>
+<element name="R7" library="SparkFun" package="0805" value="10K" x="61.25" y="54" rot="R180"/>
+<element name="R9" library="SparkFun" package="0805" value="10K" x="68.25" y="54" rot="R180"/>
+<element name="R10" library="SparkFun" package="0805" value="10K" x="75.25" y="54" rot="R180"/>
+<element name="R13" library="SparkFun" package="0805" value="10K" x="40.25" y="54" rot="R180"/>
+<element name="R14" library="SparkFun" package="0805" value="10K" x="33.25" y="54" rot="R180"/>
+<element name="R15" library="SparkFun" package="0805" value="10K" x="26.25" y="54" rot="R180"/>
+<element name="R16" library="SparkFun" package="0805" value="10K" x="19.25" y="54" rot="R180"/>
+<element name="R17" library="SparkFun" package="0805" value="50" x="75.25" y="52.25"/>
+<element name="R18" library="SparkFun" package="0805" value="50" x="40.25" y="52.25"/>
+<element name="R19" library="SparkFun" package="0805" value="50" x="68.25" y="52.25"/>
+<element name="R20" library="SparkFun" package="0805" value="50" x="61.25" y="52.25"/>
+<element name="R21" library="SparkFun" package="0805" value="50" x="54.25" y="52.25"/>
+<element name="R22" library="SparkFun" package="0805" value="50" x="33.25" y="52.25"/>
+<element name="R23" library="SparkFun" package="0805" value="50" x="26.25" y="52.25"/>
+<element name="R24" library="SparkFun" package="0805" value="50" x="19.25" y="52.25"/>
 </elements>
 <signals>
 <signal name="GND" class="1">
@@ -1094,6 +1110,22 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="5.5" y1="31.9" x2="10.4" y2="31.9" width="1.016" layer="1"/>
 <wire x1="10.4" y1="31.9" x2="10.5" y2="32" width="1.016" layer="1"/>
 <wire x1="34" y1="23.4" x2="34" y2="22.4" width="0.4064" layer="1"/>
+<contactref element="R3" pad="1"/>
+<contactref element="R7" pad="1"/>
+<contactref element="R9" pad="1"/>
+<contactref element="R10" pad="1"/>
+<contactref element="R13" pad="1"/>
+<contactref element="R14" pad="1"/>
+<contactref element="R15" pad="1"/>
+<contactref element="R16" pad="1"/>
+<wire x1="20.15" y1="54" x2="21.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="27.15" y1="54" x2="28.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="34.15" y1="54" x2="35.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="41.15" y1="54" x2="42.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="55.15" y1="54" x2="56.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="62.15" y1="54" x2="63.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="69.15" y1="54" x2="70.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="76.15" y1="54" x2="77.75" y2="54" width="0.4064" layer="1"/>
 </signal>
 <signal name="VCC">
 <contactref element="U$2" pad="P$2"/>
@@ -1147,10 +1179,10 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="63.65" y1="40.75" x2="63.65" y2="42.4" width="0.4064" layer="1"/>
 <wire x1="27.75" y1="33.4" x2="27.75" y2="31.25" width="1.016" layer="1"/>
 <wire x1="27.75" y1="31.25" x2="27.75" y2="27" width="1.016" layer="1"/>
-<wire x1="27.75" y1="27" x2="29.5" y2="27" width="1.016" layer="1"/>
-<via x="29.5" y="27" extent="1-16" drill="0.6"/>
-<wire x1="29.5" y1="27" x2="35" y2="27" width="1.016" layer="16"/>
-<wire x1="35" y1="27" x2="36.75" y2="27" width="1.016" layer="16"/>
+<wire x1="27.75" y1="27" x2="28.75" y2="27" width="1.016" layer="1"/>
+<via x="28.75" y="27" extent="1-16" drill="0.6"/>
+<wire x1="28.75" y1="27" x2="35.25" y2="27" width="1.016" layer="16"/>
+<wire x1="35.25" y1="27" x2="36.75" y2="27" width="1.016" layer="16"/>
 <wire x1="36.75" y1="27" x2="38.25" y2="25.5" width="1.016" layer="16"/>
 <wire x1="38.25" y1="25.5" x2="38.25" y2="20.5" width="1.016" layer="16"/>
 <via x="38.25" y="20.5" extent="1-16" drill="0.6"/>
@@ -1163,9 +1195,9 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="42.25" y1="20.5" x2="43" y2="19.75" width="1.016" layer="16"/>
 <wire x1="43" y1="19.75" x2="43" y2="14.31" width="1.016" layer="16"/>
 <wire x1="43" y1="14.31" x2="43.02" y2="14.29" width="1.016" layer="16"/>
-<wire x1="34.5" y1="25.175" x2="34.5" y2="26.5" width="0.254" layer="1"/>
-<wire x1="34.5" y1="26.5" x2="35" y2="27" width="0.254" layer="1"/>
-<via x="35" y="27" extent="1-16" drill="0.6"/>
+<wire x1="34.5" y1="25.175" x2="34.5" y2="25.75" width="0.254" layer="1"/>
+<wire x1="34.5" y1="25.75" x2="35.25" y2="27" width="0.254" layer="1"/>
+<via x="35.25" y="27" extent="1-16" drill="0.6"/>
 <wire x1="27.75" y1="27" x2="27.65" y2="26.9" width="0.4064" layer="1"/>
 <wire x1="27.65" y1="26.9" x2="27.65" y2="25" width="0.4064" layer="1"/>
 <wire x1="27.65" y1="25" x2="29" y2="25" width="0.254" layer="1"/>
@@ -1380,108 +1412,106 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="75.5" y1="62.85" x2="75.5" y2="70.75" width="3" layer="1"/>
 </signal>
 <signal name="PWM0">
-<contactref element="U$1" pad="P$1"/>
-<wire x1="35.5" y1="48.25" x2="36.75" y2="49.5" width="0.254" layer="1"/>
-<wire x1="36.75" y1="49.5" x2="72.25" y2="49.5" width="0.254" layer="1"/>
-<wire x1="72.25" y1="49.5" x2="73.25" y2="50.5" width="0.254" layer="1"/>
-<wire x1="73.25" y1="50.5" x2="73.25" y2="56.365" width="0.254" layer="1"/>
-<wire x1="73.25" y1="56.365" x2="73.215" y2="56.4" width="0.254" layer="1"/>
+<wire x1="36" y1="46.5" x2="37.25" y2="47.75" width="0.4064" layer="1"/>
+<wire x1="37.25" y1="47.75" x2="75.5" y2="47.75" width="0.4064" layer="1"/>
 <contactref element="U1" pad="12"/>
 <wire x1="35.775" y1="19.4" x2="35.775" y2="18.725" width="0.254" layer="1"/>
 <wire x1="35.775" y1="18.725" x2="36" y2="18.5" width="0.254" layer="1"/>
 <via x="36" y="18.5" extent="1-16" drill="0.6"/>
 <wire x1="36" y1="18.5" x2="36" y2="25.5" width="0.254" layer="16"/>
 <via x="36" y="25.5" extent="1-16" drill="0.6"/>
-<wire x1="36" y1="25.5" x2="36" y2="27.75" width="0.254" layer="1"/>
-<wire x1="36" y1="27.75" x2="35.5" y2="28.25" width="0.254" layer="1"/>
-<wire x1="35.5" y1="28.25" x2="35.5" y2="48.25" width="0.254" layer="1"/>
+<wire x1="36" y1="25.5" x2="36" y2="46.5" width="0.4064" layer="1"/>
+<contactref element="R17" pad="2"/>
+<wire x1="76.15" y1="52.25" x2="76.15" y2="48.4" width="0.4064" layer="1"/>
+<wire x1="76.15" y1="48.4" x2="75.5" y2="47.75" width="0.4064" layer="1"/>
 </signal>
 <signal name="PWM1">
-<contactref element="U$3" pad="P$1"/>
-<wire x1="36.25" y1="50" x2="65" y2="50" width="0.254" layer="1"/>
-<wire x1="65" y1="50" x2="66" y2="51" width="0.254" layer="1"/>
-<wire x1="66" y1="51" x2="66" y2="56.185" width="0.254" layer="1"/>
-<wire x1="66" y1="56.185" x2="66.215" y2="56.4" width="0.254" layer="1"/>
 <contactref element="U1" pad="27"/>
-<wire x1="33" y1="25.175" x2="33" y2="46.75" width="0.254" layer="1"/>
-<wire x1="33" y1="46.75" x2="36.25" y2="50" width="0.254" layer="1"/>
+<wire x1="33" y1="25.175" x2="33" y2="26" width="0.254" layer="1"/>
+<wire x1="33" y1="26" x2="33" y2="45.25" width="0.4064" layer="1"/>
+<wire x1="33" y1="45.25" x2="36.25" y2="48.5" width="0.4064" layer="1"/>
+<contactref element="R19" pad="2"/>
+<wire x1="69.15" y1="52.25" x2="69.15" y2="49.15" width="0.4064" layer="1"/>
+<wire x1="69.15" y1="49.15" x2="68.5" y2="48.5" width="0.4064" layer="1"/>
+<wire x1="68.5" y1="48.5" x2="36.25" y2="48.5" width="0.4064" layer="1"/>
 </signal>
 <signal name="PWM2">
-<contactref element="U$4" pad="P$1"/>
-<wire x1="35.75" y1="50.5" x2="58.25" y2="50.5" width="0.254" layer="1"/>
-<wire x1="58.25" y1="50.5" x2="59.25" y2="51.5" width="0.254" layer="1"/>
-<wire x1="59.25" y1="51.5" x2="59.25" y2="56.365" width="0.254" layer="1"/>
-<wire x1="59.25" y1="56.365" x2="59.215" y2="56.4" width="0.254" layer="1"/>
 <contactref element="U1" pad="29"/>
-<wire x1="32" y1="25.175" x2="32" y2="46.75" width="0.254" layer="1"/>
-<wire x1="32" y1="46.75" x2="35.75" y2="50.5" width="0.254" layer="1"/>
+<wire x1="32" y1="25.175" x2="32" y2="26" width="0.254" layer="1"/>
+<wire x1="32" y1="26" x2="32.25" y2="26.25" width="0.254" layer="1"/>
+<wire x1="32.25" y1="26.25" x2="32.25" y2="45.75" width="0.4064" layer="1"/>
+<wire x1="32.25" y1="45.75" x2="35.75" y2="49.25" width="0.4064" layer="1"/>
+<contactref element="R20" pad="2"/>
+<wire x1="62.15" y1="52.25" x2="62.15" y2="49.9" width="0.4064" layer="1"/>
+<wire x1="62.15" y1="49.9" x2="61.5" y2="49.25" width="0.4064" layer="1"/>
+<wire x1="61.5" y1="49.25" x2="35.75" y2="49.25" width="0.4064" layer="1"/>
 </signal>
 <signal name="PWM3">
-<contactref element="U$5" pad="P$1"/>
-<wire x1="35.25" y1="51" x2="51" y2="51" width="0.254" layer="1"/>
-<wire x1="51" y1="51" x2="52.25" y2="52.25" width="0.254" layer="1"/>
-<wire x1="52.25" y1="52.25" x2="52.25" y2="56.365" width="0.254" layer="1"/>
-<wire x1="52.25" y1="56.365" x2="52.215" y2="56.4" width="0.254" layer="1"/>
+<wire x1="35.25" y1="50" x2="54.75" y2="50" width="0.4064" layer="1"/>
 <contactref element="U1" pad="30"/>
-<wire x1="31.5" y1="25.175" x2="31.5" y2="47.25" width="0.254" layer="1"/>
-<wire x1="31.5" y1="47.25" x2="35.25" y2="51" width="0.254" layer="1"/>
+<wire x1="31.5" y1="25.175" x2="31.5" y2="26" width="0.254" layer="1"/>
+<wire x1="31.5" y1="26" x2="31.5" y2="46.25" width="0.4064" layer="1"/>
+<wire x1="31.5" y1="46.25" x2="35.25" y2="50" width="0.4064" layer="1"/>
+<contactref element="R21" pad="2"/>
+<wire x1="55.15" y1="52.25" x2="55.15" y2="50.4" width="0.4064" layer="1"/>
+<wire x1="55.15" y1="50.4" x2="54.75" y2="50" width="0.4064" layer="1"/>
 </signal>
 <signal name="PWM4">
-<contactref element="U$6" pad="P$1"/>
-<wire x1="34" y1="51.5" x2="37" y2="51.5" width="0.254" layer="1"/>
-<wire x1="37" y1="51.5" x2="38.25" y2="52.75" width="0.254" layer="1"/>
-<wire x1="38.25" y1="52.75" x2="38.25" y2="56.365" width="0.254" layer="1"/>
-<wire x1="38.25" y1="56.365" x2="38.215" y2="56.4" width="0.254" layer="1"/>
 <contactref element="U1" pad="31"/>
-<wire x1="31" y1="25.175" x2="31" y2="48.5" width="0.254" layer="1"/>
-<wire x1="31" y1="48.5" x2="34" y2="51.5" width="0.254" layer="1"/>
+<wire x1="31" y1="25.175" x2="31" y2="26" width="0.254" layer="1"/>
+<wire x1="31" y1="26" x2="30.75" y2="26.25" width="0.254" layer="1"/>
+<wire x1="30.75" y1="26.25" x2="30.75" y2="46.75" width="0.4064" layer="1"/>
+<contactref element="R18" pad="2"/>
+<wire x1="41.15" y1="52.25" x2="41.15" y2="51.15" width="0.4064" layer="1"/>
+<wire x1="41.15" y1="51.15" x2="40.75" y2="50.75" width="0.4064" layer="1"/>
+<wire x1="40.75" y1="50.75" x2="34.75" y2="50.75" width="0.4064" layer="1"/>
+<wire x1="34.75" y1="50.75" x2="30.75" y2="46.75" width="0.4064" layer="1"/>
 </signal>
 <signal name="PWM5">
-<contactref element="U$7" pad="P$1"/>
-<wire x1="31.25" y1="56.365" x2="31.215" y2="56.4" width="0.254" layer="1"/>
 <contactref element="U1" pad="32"/>
-<wire x1="30.5" y1="25.175" x2="30.5" y2="49" width="0.254" layer="1"/>
-<wire x1="30.5" y1="49" x2="31.25" y2="49.75" width="0.254" layer="1"/>
-<wire x1="31.25" y1="49.75" x2="31.25" y2="56.365" width="0.254" layer="1"/>
+<wire x1="30.5" y1="25.175" x2="30.5" y2="25.75" width="0.254" layer="1"/>
+<wire x1="30.5" y1="25.75" x2="30" y2="26.25" width="0.254" layer="1"/>
+<wire x1="30" y1="26.25" x2="30" y2="47.25" width="0.4064" layer="1"/>
+<contactref element="R22" pad="2"/>
+<wire x1="34.15" y1="52.25" x2="34.15" y2="51.4" width="0.4064" layer="1"/>
+<wire x1="34.15" y1="51.4" x2="30" y2="47.25" width="0.4064" layer="1"/>
 </signal>
 <signal name="PWM6">
-<contactref element="U$8" pad="P$1"/>
-<wire x1="29.125" y1="50.375" x2="28" y2="51.5" width="0.254" layer="1"/>
-<wire x1="28" y1="51.5" x2="25.5" y2="51.5" width="0.254" layer="1"/>
-<wire x1="25.5" y1="51.5" x2="24.25" y2="52.75" width="0.254" layer="1"/>
-<wire x1="24.25" y1="52.75" x2="24.25" y2="56.365" width="0.254" layer="1"/>
-<wire x1="24.25" y1="56.365" x2="24.215" y2="56.4" width="0.254" layer="1"/>
 <contactref element="U1" pad="25"/>
-<wire x1="34" y1="25.175" x2="34" y2="42.25" width="0.254" layer="1"/>
-<wire x1="34" y1="42.25" x2="34.5" y2="42.75" width="0.254" layer="1"/>
-<via x="34.5" y="42.75" extent="1-16" drill="0.6"/>
-<wire x1="34.5" y1="42.75" x2="29" y2="42.75" width="0.254" layer="16"/>
-<wire x1="29" y1="42.75" x2="27.25" y2="44.5" width="0.254" layer="16"/>
-<wire x1="27.25" y1="44.5" x2="27.25" y2="46.5" width="0.254" layer="16"/>
-<wire x1="27.25" y1="46.5" x2="29.25" y2="48.5" width="0.254" layer="16"/>
+<wire x1="34" y1="25.175" x2="34" y2="25.75" width="0.254" layer="1"/>
+<wire x1="34" y1="25.75" x2="34.5" y2="26.25" width="0.254" layer="1"/>
+<wire x1="34.5" y1="26.25" x2="34.5" y2="42.5" width="0.4064" layer="1"/>
+<wire x1="34.5" y1="42.5" x2="34.75" y2="42.75" width="0.4064" layer="1"/>
+<via x="34.75" y="42.75" extent="1-16" drill="0.6"/>
 <via x="29.25" y="48.5" extent="1-16" drill="0.6"/>
-<wire x1="29.25" y1="48.5" x2="29.25" y2="50.25" width="0.254" layer="1"/>
-<wire x1="29.25" y1="50.25" x2="29.125" y2="50.375" width="0.254" layer="1"/>
+<wire x1="29.25" y1="48.5" x2="29.25" y2="51.75" width="0.4064" layer="1"/>
+<contactref element="R23" pad="2"/>
+<wire x1="27.15" y1="52.25" x2="28.75" y2="52.25" width="0.4064" layer="1"/>
+<wire x1="28.75" y1="52.25" x2="29.25" y2="51.75" width="0.4064" layer="1"/>
+<wire x1="29.25" y1="48.5" x2="29.25" y2="46.5" width="0.4064" layer="16"/>
+<wire x1="29.25" y1="46.5" x2="30.25" y2="45.5" width="0.4064" layer="16"/>
+<wire x1="30.25" y1="45.5" x2="34.5" y2="45.5" width="0.4064" layer="16"/>
+<wire x1="34.5" y1="45.5" x2="35" y2="45" width="0.4064" layer="16"/>
+<wire x1="35" y1="45" x2="35" y2="43" width="0.4064" layer="16"/>
+<wire x1="35" y1="43" x2="34.75" y2="42.75" width="0.4064" layer="16"/>
 </signal>
 <signal name="PWM7">
-<contactref element="U$9" pad="P$1"/>
-<wire x1="28.25" y1="50.25" x2="27.5" y2="51" width="0.254" layer="1"/>
-<wire x1="27.5" y1="51" x2="22" y2="51" width="0.254" layer="1"/>
-<wire x1="22" y1="51" x2="20.25" y2="52.75" width="0.254" layer="1"/>
-<wire x1="20.25" y1="52.75" x2="18" y2="52.75" width="0.254" layer="1"/>
-<wire x1="18" y1="52.75" x2="17.25" y2="53.5" width="0.254" layer="1"/>
-<wire x1="17.25" y1="53.5" x2="17.25" y2="56.365" width="0.254" layer="1"/>
-<wire x1="17.25" y1="56.365" x2="17.215" y2="56.4" width="0.254" layer="1"/>
+<wire x1="28.25" y1="50.25" x2="27.5" y2="51" width="0.4064" layer="1"/>
+<wire x1="27.5" y1="51" x2="22.25" y2="51" width="0.4064" layer="1"/>
 <contactref element="U1" pad="26"/>
-<wire x1="33.5" y1="43.75" x2="34" y2="44.25" width="0.254" layer="1"/>
-<via x="34" y="44.25" extent="1-16" drill="0.6"/>
-<wire x1="34" y1="44.25" x2="29.75" y2="44.25" width="0.254" layer="16"/>
-<wire x1="29.75" y1="44.25" x2="28.75" y2="45.25" width="0.254" layer="16"/>
+<wire x1="33.75" y1="43.75" x2="34" y2="44" width="0.4064" layer="1"/>
+<via x="34" y="44" extent="1-16" drill="0.6"/>
+<wire x1="34" y1="44" x2="30" y2="44" width="0.4064" layer="16"/>
+<wire x1="30" y1="44" x2="28.75" y2="45.25" width="0.4064" layer="16"/>
 <via x="28.75" y="45.25" extent="1-16" drill="0.6"/>
-<wire x1="28.75" y1="45.25" x2="28.75" y2="46.25" width="0.254" layer="1"/>
-<wire x1="28.75" y1="46.25" x2="28.25" y2="46.75" width="0.254" layer="1"/>
-<wire x1="28.25" y1="46.75" x2="28.25" y2="50.25" width="0.254" layer="1"/>
-<wire x1="33.5" y1="43.75" x2="33.5" y2="25.175" width="0.254" layer="1"/>
+<wire x1="28.75" y1="45.25" x2="28.25" y2="45.75" width="0.4064" layer="1"/>
+<wire x1="28.25" y1="45.75" x2="28.25" y2="50.25" width="0.4064" layer="1"/>
+<wire x1="33.75" y1="43.75" x2="33.75" y2="26.25" width="0.4064" layer="1"/>
+<wire x1="33.75" y1="26.25" x2="33.5" y2="26" width="0.254" layer="1"/>
+<wire x1="33.5" y1="26" x2="33.5" y2="25.175" width="0.254" layer="1"/>
+<contactref element="R24" pad="2"/>
+<wire x1="20.15" y1="52.25" x2="21" y2="52.25" width="0.4064" layer="1"/>
+<wire x1="21" y1="52.25" x2="22.25" y2="51" width="0.4064" layer="1"/>
 </signal>
 <signal name="OUT1">
 <contactref element="U$3" pad="P$3"/>
@@ -1792,6 +1822,81 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="N$28">
 <via x="21" y="45.75" extent="1-16" drill="0.6"/>
+</signal>
+<signal name="PWM0_MID">
+<contactref element="U$1" pad="P$1"/>
+<contactref element="R10" pad="2"/>
+<contactref element="R17" pad="1"/>
+<wire x1="74.35" y1="54" x2="74.35" y2="52.25" width="0.4064" layer="1"/>
+<wire x1="74.35" y1="54" x2="73.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="73.75" y1="54" x2="73.25" y2="54.5" width="0.4064" layer="1"/>
+<wire x1="73.25" y1="54.5" x2="73.25" y2="56.365" width="0.4064" layer="1"/>
+<wire x1="73.25" y1="56.365" x2="73.215" y2="56.4" width="0.4064" layer="1"/>
+</signal>
+<signal name="PWM1_MID">
+<contactref element="U$3" pad="P$1"/>
+<contactref element="R9" pad="2"/>
+<contactref element="R19" pad="1"/>
+<wire x1="67.35" y1="52.25" x2="67.35" y2="54" width="0.4064" layer="1"/>
+<wire x1="67.35" y1="54" x2="66.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="66.75" y1="54" x2="66.25" y2="54.5" width="0.4064" layer="1"/>
+<wire x1="66.25" y1="54.5" x2="66.25" y2="56.365" width="0.4064" layer="1"/>
+<wire x1="66.25" y1="56.365" x2="66.215" y2="56.4" width="0.4064" layer="1"/>
+</signal>
+<signal name="PWM3_MID">
+<contactref element="U$5" pad="P$1"/>
+<contactref element="R3" pad="2"/>
+<contactref element="R21" pad="1"/>
+<wire x1="52.215" y1="56.4" x2="52.215" y2="54.535" width="0.4064" layer="1"/>
+<wire x1="52.215" y1="54.535" x2="52.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="52.75" y1="54" x2="53.35" y2="54" width="0.4064" layer="1"/>
+<wire x1="53.35" y1="54" x2="53.35" y2="52.25" width="0.4064" layer="1"/>
+</signal>
+<signal name="PWM2_MID">
+<contactref element="U$4" pad="P$1"/>
+<contactref element="R7" pad="2"/>
+<contactref element="R20" pad="1"/>
+<wire x1="59.25" y1="56.365" x2="59.215" y2="56.4" width="0.254" layer="1"/>
+<wire x1="59.25" y1="56.365" x2="59.25" y2="54.5" width="0.4064" layer="1"/>
+<wire x1="59.25" y1="54.5" x2="59.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="59.75" y1="54" x2="60.35" y2="54" width="0.4064" layer="1"/>
+<wire x1="60.35" y1="54" x2="60.35" y2="52.25" width="0.4064" layer="1"/>
+</signal>
+<signal name="PWM4_MID">
+<contactref element="U$6" pad="P$1"/>
+<contactref element="R13" pad="2"/>
+<contactref element="R18" pad="1"/>
+<wire x1="38.215" y1="56.4" x2="38.215" y2="54.535" width="0.4064" layer="1"/>
+<wire x1="38.215" y1="54.535" x2="38.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="38.75" y1="54" x2="39.35" y2="54" width="0.4064" layer="1"/>
+<wire x1="39.35" y1="54" x2="39.35" y2="52.25" width="0.4064" layer="1"/>
+</signal>
+<signal name="PWM5_MID">
+<contactref element="U$7" pad="P$1"/>
+<contactref element="R14" pad="2"/>
+<contactref element="R22" pad="1"/>
+<wire x1="31.215" y1="56.4" x2="31.215" y2="54.535" width="0.4064" layer="1"/>
+<wire x1="31.215" y1="54.535" x2="31.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="31.75" y1="54" x2="32.35" y2="54" width="0.4064" layer="1"/>
+<wire x1="32.35" y1="54" x2="32.35" y2="52.25" width="0.4064" layer="1"/>
+</signal>
+<signal name="PWM6_MID">
+<contactref element="U$8" pad="P$1"/>
+<contactref element="R15" pad="2"/>
+<contactref element="R23" pad="1"/>
+<wire x1="24.215" y1="56.4" x2="24.215" y2="54.535" width="0.4064" layer="1"/>
+<wire x1="24.215" y1="54.535" x2="24.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="24.75" y1="54" x2="25.35" y2="54" width="0.4064" layer="1"/>
+<wire x1="25.35" y1="54" x2="25.35" y2="52.25" width="0.4064" layer="1"/>
+</signal>
+<signal name="PWM7_MID">
+<contactref element="U$9" pad="P$1"/>
+<contactref element="R16" pad="2"/>
+<contactref element="R24" pad="1"/>
+<wire x1="17.215" y1="56.4" x2="17.215" y2="54.535" width="0.4064" layer="1"/>
+<wire x1="17.215" y1="54.535" x2="17.75" y2="54" width="0.4064" layer="1"/>
+<wire x1="17.75" y1="54" x2="18.35" y2="54" width="0.4064" layer="1"/>
+<wire x1="18.35" y1="54" x2="18.35" y2="52.25" width="0.4064" layer="1"/>
 </signal>
 </signals>
 </board>
