@@ -3,8 +3,7 @@
 
 #include <Arduino.h>
 
-#define MAX_DATA_SIZE       50       // Arbitrary
-#define MAX_PACKETLENGTH    MAX_DATA_SIZE // arbitrary?
+#define MAX_DATA_SIZE       255  // Maximum length of the data packet we can receive
 
 #define MODE_HEADER0        0x0
 #define MODE_HEADER1        0x1
@@ -22,7 +21,7 @@ private:
 
   uint8_t m_expectedLength;                ///< Number of bytes expected in the current packet  
   uint8_t m_mode;                          ///< Current operational mode
-  uint8_t m_packetData[MAX_PACKETLENGTH];  ///< Data received in this packet
+  uint8_t m_packetData[MAX_DATA_SIZE];     ///< Data received in this packet
   uint8_t m_packetLength;                  ///< Number of bytes received for this packet
   uint8_t m_crc;                           ///< CRC calculated for this packet
 

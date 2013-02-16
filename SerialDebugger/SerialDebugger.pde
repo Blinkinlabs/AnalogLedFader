@@ -8,6 +8,7 @@ Serial outPort;
 String VERSION_STRING = "0.1";
 
 int NUMBER_OF_CHANNELS = 6;
+int MAX_VALUE = 65535;
 
 int[] values; // Light values to send
 
@@ -40,7 +41,7 @@ void setup() {
     Slider s = cp5.addSlider("value[" + i + "]")
      .setPosition(300 + (i/speakersPerCol)*250,10+(i%speakersPerCol)*35)
      .setSize(180,30)
-     .setRange(0,65535)
+     .setRange(0,MAX_VALUE)
      .setSliderMode(Slider.FLEXIBLE)
      .setDecimalPrecision(0)
      .setValue(0)
@@ -102,7 +103,7 @@ void draw() {
         newPosition = 0;
       }
       else {
-        newPosition = 65535;
+        newPosition = MAX_VALUE;
       }
       
       for(int i = 0; i < NUMBER_OF_CHANNELS; i++) {
@@ -116,12 +117,11 @@ void draw() {
   
   if(randomMotion) {
     if(random(0,10)>8) {
-      values[(int)random(0,NUMBER_OF_CHANNELS-1)] = (int)random(0,65535);
+      values[(int)random(0,NUMBER_OF_CHANNELS-1)] = (int)random(0,MAX_VALUE);
     } 
   }
   
   sendUpdate();
-  println(values[0]);
 }
 
 void controlEvent(ControlEvent theEvent) {

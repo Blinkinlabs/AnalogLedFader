@@ -6,7 +6,7 @@ void Protocol::init(uint8_t address) {
 }
 
 void Protocol::reset() {
-  for(uint8_t i = 0; i < MAX_PACKETLENGTH + 1; i++) {
+  for(uint8_t i = 0; i < MAX_DATA_SIZE; i++) {
     m_packetData[i] = 0;
   }
 

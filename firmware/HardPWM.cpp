@@ -49,7 +49,7 @@ void HardPWM::begin() {
   TCCR1B = (1 << WGM13) | (0 << WGM12) | (0 << CS12) | (0 << CS11) | (1 << CS10);
   ICR1 = 0xFFFF;
   
-    // Configure timer1 for 16-bit, PWM, Phase and Frequency Correct operation at @15.625KHz
+    // Configure timer3 for 16-bit, PWM, Phase and Frequency Correct operation at @15.625KHz
   bitSet(DDRC, 6);  // OCR1A, PC6 (PWM3)
   
   TCCR3A = (1 << COM3A1) | (0 << COM3A0) | (0 << WGM31) | (0 << WGM30);
@@ -68,13 +68,4 @@ void HardPWM::begin() {
   
   TC4H = 0x03;
   OCR4C = 0xFF;  // OCR4C contains the TOP value
-  
-//  // configure timer3 for 12-bit PWM @4KHz (16MHz / 4096)
-//  // PWM, Phase and Frequency correct, reset on ICR
-//  TCCR3A = (0 << WGM31) | (0 << WGM30);
-//  TCCR3B = (1 << WGM33) | (0 << WGM32) | (0 << CS32) | (0 << CS31) | (1 << CS30);
-//  ICR3 = 4095; // 2**12 - 1, for 12-bit mode
-//  OCR3A = 0x0001;  // Set some default values
-//  OCR3B = 0x0002;
-//  OCR3C = 0x0004;
 }
