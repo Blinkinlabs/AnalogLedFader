@@ -3,7 +3,9 @@
 #include "HardPWM.h"
 #include "Protocol.h"
 
-#define PIN_DE           3    // Set this high to enable transmission on the RS485 line
+//#define PIN_DE           3    // Set this high to enable transmission on the RS485 line
+
+#define PIN_STATUS_LED   11
 
 HardPWM hardPWM;
 
@@ -11,6 +13,9 @@ Protocol usbReceiver;
 Protocol rs485Receiver;
 
 void setup() {
+  pinMode(PIN_STATUS_LED, OUTPUT);
+  digitalWrite(PIN_STATUS_LED, LOW);
+  
   //  pinMode(PIN_DE, OUTPUT);  // enable RS485 input
   //  digitalWrite(PIN_DE, 0);
 
@@ -39,6 +44,8 @@ void loop() {
 
   // Handle incoming data from RS485  
   if(Serial1.available()) {
+    digitalWrite(PIN_STATUS_LED, HIGH);
+      
     if(rs485Receiver.parseByte(Serial1.read())) {
       uint16_t* data = rs485Receiver.getPacket16();
       
@@ -46,6 +53,10 @@ void loop() {
         hardPWM.write(i, data[i]);
       }
     }
+  }
+  
+  else {
+    digitalWrite(PIN_STATUS_LED, LOW);
   }
 }
 

@@ -8,12 +8,12 @@
 // This is an alternate PWM interface for Arduino/Atmega32u4, that provides 16 MHz,
 // 16- and 10-bit PWM outputs on the following channels:
 //
-// PB5 (PWM0) (16 bit)
-// PB6 (PWM1) (16 bit)
-// PB7 (PWM2) (16 bit)
-// PC6 (PWM3) (16 bit)
-// PC7 (PWM4) (10 bit)
-// PD7 (PWM5) (10 bit)
+// PB7 (PWM0) (1 bit)
+// PD7 (PWM1) (1 bit)
+// PB5 (PWM2) (1 bit)
+// PB6 (PWM3) (1 bit)
+// PC6 (PWM4) (1 bit)
+// PC7 (PWM5) (1 bit)
   
 class HardPWM {
  private:
