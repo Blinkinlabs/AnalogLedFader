@@ -7,21 +7,22 @@ Serial outPort;
 
 String VERSION_STRING = "0.1";
 
-int NUMBER_OF_CHANNELS = 6;
+int NUMBER_OF_CHANNELS = 30;
 int MAX_VALUE = 65535;
 
 int[] values; // Light values to send
 
 void setup() {
   size(600,300);
+  frameRate(30);
   cp5 = new ControlP5(this);
   
   values = new int[NUMBER_OF_CHANNELS];
   
-  String portName = "/dev/cu.usbmodem12341";  // TODO: How to request cu.* devices?
+  String portName = "/dev/cu.usbmodem1411";  // TODO: How to request cu.* devices?
   
   println(portName);
-  outPort = new Serial(this, portName, 115200);
+  outPort = new Serial(this, portName, 57600);
   
   // Position controls
   cp5.addToggle("rangeTest")

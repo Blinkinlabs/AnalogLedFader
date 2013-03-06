@@ -137,13 +137,13 @@
 <hole x="84" y="72" drill="3.2"/>
 <hole x="3" y="72" drill="3.2"/>
 <hole x="3" y="3" drill="3.2"/>
-<text x="39" y="41.5" size="1.4224" layer="25" font="vector" rot="R135" align="bottom-right">blinkiverse.com/ledfader</text>
-<text x="47" y="41.75" size="1.778" layer="25" font="vector" rot="R135" align="bottom-right">Blinkiverse</text>
+<text x="38.75" y="43" size="1.4224" layer="25" font="vector" rot="R135" align="bottom-right">blinkiverse.com/ledfader</text>
+<text x="46.75" y="43.25" size="1.778" layer="25" font="vector" rot="R135" align="bottom-right">Blinkiverse</text>
 <hole x="39" y="3" drill="3.2"/>
 <hole x="3" y="37.5" drill="3.2"/>
 <hole x="84" y="37.5" drill="3.2"/>
 <hole x="48" y="72" drill="3.2"/>
-<text x="41.75" y="42.75" size="1.778" layer="25" font="vector" rot="R135" align="bottom-right">Analog LED Fader</text>
+<text x="41.5" y="44.25" size="1.778" layer="25" font="vector" rot="R135" align="bottom-right">Analog LED Fader</text>
 </plain>
 <libraries>
 <library name="reprap">
@@ -844,8 +844,12 @@ Please make sure your boards conform to these design rules.</description>
 <element name="U$7" library="blinkiverse" package="TO252" value="N_MOSFET" x="31" y="59.75"/>
 <element name="U$8" library="blinkiverse" package="TO252" value="N_MOSFET" x="24" y="59.75"/>
 <element name="U$9" library="blinkiverse" package="TO252" value="N_MOSFET" x="17" y="59.75"/>
-<element name="JP2" library="SparkFun" package="SCREWTERMINAL-3.5MM-8" value="" x="78" y="70.75" rot="R180"/>
-<element name="JP3" library="SparkFun" package="SCREWTERMINAL-3.5MM-8" value="" x="41.5" y="70.75" rot="R180"/>
+<element name="JP2" library="SparkFun" package="SCREWTERMINAL-3.5MM-8" value="" x="78" y="70.75" smashed="yes" rot="R180">
+<attribute name="VALUE" x="79.27" y="69.48" size="0.4064" layer="27" rot="R180"/>
+</element>
+<element name="JP3" library="SparkFun" package="SCREWTERMINAL-3.5MM-8" value="" x="41.5" y="70.75" smashed="yes" rot="R180">
+<attribute name="VALUE" x="42.77" y="69.48" size="0.4064" layer="27" rot="R180"/>
+</element>
 <element name="JP4" library="SparkFun" package="SCREWTERMINAL-3.5MM-4" value="" x="4.25" y="21.75" smashed="yes" rot="R270">
 <attribute name="VALUE" x="5.52" y="23.02" size="0.4064" layer="27" rot="R270"/>
 </element>
@@ -897,18 +901,42 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="41.2996" y="5.5534" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
 <element name="J2" library="SparkFun" package="POWER_JACK_PTH" value="POWER_JACKPTH" x="13" y="-4.25"/>
-<element name="C18" library="SparkFun" package="1210" value="?uF" x="5.5" y="47.75" rot="R270"/>
-<element name="C19" library="SparkFun" package="1210" value="?uF" x="5.5" y="42.75" rot="R90"/>
-<element name="C20" library="SparkFun" package="1210" value="?uF" x="5.5" y="32.75" rot="R270"/>
-<element name="C21" library="SparkFun" package="1210" value="?uF" x="5.5" y="27.75" rot="R90"/>
-<element name="R3" library="SparkFun" package="0805" value="10K" x="53.25" y="53.25" rot="R180"/>
-<element name="R7" library="SparkFun" package="0805" value="10K" x="60.25" y="53.25" rot="R180"/>
-<element name="R9" library="SparkFun" package="0805" value="10K" x="67.25" y="53.25" rot="R180"/>
-<element name="R10" library="SparkFun" package="0805" value="10K" x="74.25" y="53.25" rot="R180"/>
-<element name="R13" library="SparkFun" package="0805" value="10K" x="37.75" y="53.25" rot="R180"/>
-<element name="R14" library="SparkFun" package="0805" value="10K" x="30.75" y="53.25" rot="R180"/>
-<element name="R15" library="SparkFun" package="0805" value="10K" x="23.75" y="53.25" rot="R180"/>
-<element name="R16" library="SparkFun" package="0805" value="10K" x="16.75" y="53.25" rot="R180"/>
+<element name="C18" library="SparkFun" package="1210" value="?uF" x="5.5" y="47.75" smashed="yes" rot="R270">
+<attribute name="VALUE" x="4.8" y="48.65" size="0.4064" layer="27" rot="R270"/>
+</element>
+<element name="C19" library="SparkFun" package="1210" value="?uF" x="5.5" y="42.75" smashed="yes" rot="R90">
+<attribute name="VALUE" x="6.2" y="41.85" size="0.4064" layer="27" rot="R90"/>
+</element>
+<element name="C20" library="SparkFun" package="1210" value="?uF" x="5.5" y="32.75" smashed="yes" rot="R270">
+<attribute name="VALUE" x="4.8" y="33.65" size="0.4064" layer="27" rot="R270"/>
+</element>
+<element name="C21" library="SparkFun" package="1210" value="?uF" x="5.5" y="27.75" smashed="yes" rot="R90">
+<attribute name="VALUE" x="6.2" y="26.85" size="0.4064" layer="27" rot="R90"/>
+</element>
+<element name="R3" library="SparkFun" package="0805" value="10K" x="53.25" y="53.25" smashed="yes" rot="R180">
+<attribute name="VALUE" x="54.266" y="54.647" size="0.4064" layer="27" rot="R180"/>
+</element>
+<element name="R7" library="SparkFun" package="0805" value="10K" x="60.25" y="53.25" smashed="yes" rot="R180">
+<attribute name="VALUE" x="61.266" y="54.647" size="0.4064" layer="27" rot="R180"/>
+</element>
+<element name="R9" library="SparkFun" package="0805" value="10K" x="67.25" y="53.25" smashed="yes" rot="R180">
+<attribute name="VALUE" x="68.266" y="54.647" size="0.4064" layer="27" rot="R180"/>
+</element>
+<element name="R10" library="SparkFun" package="0805" value="10K" x="74.25" y="53.25" smashed="yes" rot="R180">
+<attribute name="VALUE" x="75.266" y="54.647" size="0.4064" layer="27" rot="R180"/>
+</element>
+<element name="R13" library="SparkFun" package="0805" value="10K" x="37.75" y="53.25" smashed="yes" rot="R180">
+<attribute name="VALUE" x="38.766" y="54.647" size="0.4064" layer="27" rot="R180"/>
+</element>
+<element name="R14" library="SparkFun" package="0805" value="10K" x="30.75" y="53.25" smashed="yes" rot="R180">
+<attribute name="VALUE" x="31.766" y="54.647" size="0.4064" layer="27" rot="R180"/>
+</element>
+<element name="R15" library="SparkFun" package="0805" value="10K" x="23.75" y="53.25" smashed="yes" rot="R180">
+<attribute name="VALUE" x="24.766" y="54.647" size="0.4064" layer="27" rot="R180"/>
+</element>
+<element name="R16" library="SparkFun" package="0805" value="10K" x="16.75" y="53.25" smashed="yes" rot="R180">
+<attribute name="VALUE" x="17.766" y="54.647" size="0.4064" layer="27" rot="R180"/>
+</element>
 <element name="U$11" library="SparkFun" package="OSHW-LOGO-L" value="" x="7.5" y="63.5"/>
 </elements>
 <signals>
@@ -1906,6 +1934,132 @@ Please make sure your boards conform to these design rules.</description>
 <via x="21" y="45.75" extent="1-16" drill="0.6"/>
 </signal>
 </signals>
+<errors>
+<approved hash="3,1,52fee206e20652fe"/>
+<approved hash="3,1,2a69e25d46b65956"/>
+<approved hash="3,1,fe7a068206aafe52"/>
+<approved hash="3,1,39d13317df99de7f"/>
+<approved hash="3,1,52dee226e1ee5116"/>
+<approved hash="3,1,efae68882d987a41"/>
+<approved hash="3,1,667bc683c6ab6653"/>
+<approved hash="3,1,641685888f549e3d"/>
+<approved hash="19,1,384203bc01193ae7"/>
+<approved hash="19,1,32c4093a09fb3205"/>
+<approved hash="19,1,3e429cbc9e113cef"/>
+<approved hash="19,1,34c4963a96f3340d"/>
+<approved hash="19,1,364894b699d43b2a"/>
+<approved hash="19,1,3a4898b69ad83826"/>
+<approved hash="19,1,7a43e7bde52178df"/>
+<approved hash="19,1,c180fd939c5b577b"/>
+<approved hash="19,1,af2889e69f604838"/>
+<approved hash="19,1,0eebbb0366a7b501"/>
+<approved hash="19,1,55cd5d812eb7a175"/>
+<approved hash="19,1,384203bc01193ae7"/>
+<approved hash="19,1,32c4093a09fb3205"/>
+<approved hash="19,1,3e429cbc9e113cef"/>
+<approved hash="19,1,34c4963a96f3340d"/>
+<approved hash="19,1,364894b699d43b2a"/>
+<approved hash="19,1,3a4898b69ad83826"/>
+<approved hash="19,1,7a43e7bde52178df"/>
+<approved hash="19,1,7249efb7e2e47f1a"/>
+<approved hash="19,1,c405cd451430f0b4"/>
+<approved hash="19,1,bcfbe205e591bb6f"/>
+<approved hash="19,1,b6c5e83be8f6b608"/>
+<approved hash="19,1,bc43e2bde014beea"/>
+<approved hash="19,1,1f090425ded52bf7"/>
+<approved hash="19,1,6ca34a651663c133"/>
+<approved hash="19,1,8561ed88d7243e0c"/>
+<approved hash="19,1,e4470b0ca5342a7e"/>
+<approved hash="19,1,384203bc01193ae7"/>
+<approved hash="19,1,32c4093a09fb3205"/>
+<approved hash="19,1,3e429cbc9e113cef"/>
+<approved hash="19,1,34c4963a96f3340d"/>
+<approved hash="19,1,364894b699d43b2a"/>
+<approved hash="19,1,3a4898b69ad83826"/>
+<approved hash="19,1,7a43e7bde52178df"/>
+<approved hash="19,1,7249efb7e2e47f1a"/>
+<approved hash="19,1,b849e6b7e4ddba23"/>
+<approved hash="19,1,bcfbe205e591bb6f"/>
+<approved hash="19,1,b6c5e83be8f6b608"/>
+<approved hash="19,1,bc43e2bde014beea"/>
+<approved hash="19,1,b449eab7e7d1b92f"/>
+<approved hash="19,1,3cf83f0638983b66"/>
+<approved hash="19,1,36c6353835ff3601"/>
+<approved hash="19,1,3c403fbe3d1d3ee3"/>
+<approved hash="19,1,ae46edb8ebeca812"/>
+<approved hash="19,1,1af0445b5988bd21"/>
+<approved hash="19,1,d3a77fdb6fccdcc6"/>
+<approved hash="19,1,c03ea68d6d8791d4"/>
+<approved hash="19,1,bc43e2bde014beea"/>
+<approved hash="19,1,719a6a1541570c8e"/>
+<approved hash="19,1,c7c561dde722599c"/>
+<approved hash="19,1,453797c572e3501c"/>
+<approved hash="19,1,324761b9672834d6"/>
+<approved hash="19,1,36440dba0beb3015"/>
+<approved hash="19,1,b24509bb0fd6b428"/>
+<approved hash="19,1,344409ba0fcb3235"/>
+<approved hash="19,1,b4440dba0bd4b22a"/>
+<approved hash="19,1,bc45e1bbe7d6ba28"/>
+<approved hash="19,1,2c4a6db46bdb2a25"/>
+<approved hash="19,16,32c4093a09fb3205"/>
+<approved hash="19,16,384203bc01193ae7"/>
+<approved hash="19,16,364894b699d43b2a"/>
+<approved hash="19,16,3e429cbc9e113cef"/>
+<approved hash="19,16,3a4898b69ad83826"/>
+<approved hash="19,16,34c4963a96f3340d"/>
+<approved hash="19,16,7249efb7e2e47f1a"/>
+<approved hash="19,16,7a43e7bde52178df"/>
+<approved hash="19,16,b449eab7e7d1b92f"/>
+<approved hash="19,16,bc43e2bde014beea"/>
+<approved hash="19,16,b849e6b7e4ddba23"/>
+<approved hash="19,16,b6c5e83be8f6b608"/>
+<approved hash="19,16,bcfbe205e591bb6f"/>
+<approved hash="19,16,3c403fbe3d1d3ee3"/>
+<approved hash="19,16,36c6353835ff3601"/>
+<approved hash="19,16,3cf83f0638983b66"/>
+<approved hash="19,16,32c4093a09fb3205"/>
+<approved hash="19,16,f5594469b0309630"/>
+<approved hash="19,16,f3e6c336a1533af4"/>
+<approved hash="19,16,3e429cbc9e113cef"/>
+<approved hash="19,16,3a4898b69ad83826"/>
+<approved hash="19,16,34c4963a96f3340d"/>
+<approved hash="19,16,d5115cc56223913e"/>
+<approved hash="19,16,7a43e7bde52178df"/>
+<approved hash="19,16,77392047fe669aac"/>
+<approved hash="19,16,bc43e2bde014beea"/>
+<approved hash="19,16,b849e6b7e4ddba23"/>
+<approved hash="19,16,b6c5e83be8f6b608"/>
+<approved hash="19,16,bcfbe205e591bb6f"/>
+<approved hash="19,16,6b8a62f6151ccd50"/>
+<approved hash="19,16,36c6353835ff3601"/>
+<approved hash="19,16,3cf83f0638983b66"/>
+<approved hash="19,16,ae46edb8ebeca812"/>
+<approved hash="19,16,324761b9672834d6"/>
+<approved hash="19,16,32c4093a09fb3205"/>
+<approved hash="19,16,7511458520ea3d3a"/>
+<approved hash="19,16,3a4898b69ad83826"/>
+<approved hash="19,16,34c4963a96f3340d"/>
+<approved hash="19,16,ae46edb8ebeca812"/>
+<approved hash="19,16,5facdf9d605b9aa3"/>
+<approved hash="19,16,f118a6357f999d33"/>
+<approved hash="19,16,b849e6b7e4ddba23"/>
+<approved hash="19,16,b6c5e83be8f6b608"/>
+<approved hash="19,16,bcfbe205e591bb6f"/>
+<approved hash="19,16,36c6353835ff3601"/>
+<approved hash="19,16,f571fdcb8b4a5689"/>
+<approved hash="19,16,324761b9672834d6"/>
+<approved hash="19,16,36440dba0beb3015"/>
+<approved hash="19,16,36440dba0beb3015"/>
+<approved hash="19,16,b24509bb0fd6b428"/>
+<approved hash="19,16,b24509bb0fd6b428"/>
+<approved hash="19,16,344409ba0fcb3235"/>
+<approved hash="19,16,344409ba0fcb3235"/>
+<approved hash="19,16,b4440dba0bd4b22a"/>
+<approved hash="19,16,b4440dba0bd4b22a"/>
+<approved hash="19,16,bc45e1bbe7d6ba28"/>
+<approved hash="19,16,bc45e1bbe7d6ba28"/>
+<approved hash="19,16,2c4a6db46bdb2a25"/>
+</errors>
 </board>
 </drawing>
 </eagle>

@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 
-#define MAX_DATA_SIZE       50  // Maximum length of the data packet we can receive
+#define MAX_DATA_SIZE       250  // Maximum length of the data packet we can receive
 
 #define MODE_HEADER0        0x0
 #define MODE_HEADER1        0x1

@@ -24,7 +24,7 @@ void setup() {
   usbReceiver.reset();
   
   // RS485 input
-  Serial1.begin(57600);
+  Serial1.begin(38400);
   rs485Receiver.reset();
   
   hardPWM.begin();
