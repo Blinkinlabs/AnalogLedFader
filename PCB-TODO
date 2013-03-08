@@ -1,2 +1,7 @@
 For RevB release:
 - design to fit into a case
+- Swap out optocoupler for an smt version (SOIC?)
+- Swap out the regulator for smt version
+- fix silk for OHS logo
+- ground fill?
+
