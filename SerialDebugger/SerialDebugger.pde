@@ -7,7 +7,7 @@ Serial outPort;
 
 String VERSION_STRING = "0.1";
 
-int NUMBER_OF_CHANNELS = 30;
+int NUMBER_OF_CHANNELS = 6;
 int MAX_VALUE = 65535;
 
 int[] values; // Light values to send
@@ -19,10 +19,10 @@ void setup() {
   
   values = new int[NUMBER_OF_CHANNELS];
   
-  String portName = "/dev/cu.usbmodem1411";  // TODO: How to request cu.* devices?
+  String portName = "/dev/cu.usbmodemfa131";  // TODO: How to request cu.* devices?
   
   println(portName);
-  outPort = new Serial(this, portName, 57600);
+  outPort = new Serial(this, portName, 38400);
   
   // Position controls
   cp5.addToggle("rangeTest")
@@ -40,8 +40,8 @@ void setup() {
     values[i] = 0;
     
     Slider s = cp5.addSlider("value[" + i + "]")
-     .setPosition(300 + (i/speakersPerCol)*250,10+(i%speakersPerCol)*35)
-     .setSize(180,30)
+     .setPosition(150 + (i/speakersPerCol)*250,10+(i%speakersPerCol)*35)
+     .setSize(300,30)
      .setRange(0,MAX_VALUE)
      .setSliderMode(Slider.FLEXIBLE)
      .setDecimalPrecision(0)
