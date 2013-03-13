@@ -4197,9 +4197,9 @@ http://www.fairchildsemi.com/ds/LM/LM7805.pdf</description>
 </classes>
 <parts>
 <part name="U2" library="reprap" deviceset="SN75176A" device="SOIC"/>
-<part name="R1" library="SparkFun" deviceset="RESISTOR" device="" value="180"/>
+<part name="R1" library="SparkFun" deviceset="RESISTOR" device="" value="180 DNP"/>
 <part name="R2" library="SparkFun" deviceset="RESISTOR" device="" value="10k"/>
-<part name="R8" library="SparkFun" deviceset="RESISTOR" device="" value="330"/>
+<part name="R8" library="SparkFun" deviceset="RESISTOR" device="" value="470"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="C7" library="SparkFun" deviceset="CAP" device="0805" value="100nF"/>
 <part name="J1" library="con-amp" deviceset="520426-4" device="" value="RS485"/>
@@ -4243,7 +4243,7 @@ http://www.fairchildsemi.com/ds/LM/LM7805.pdf</description>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="JP2" library="SparkFun" deviceset="M08" device="3.5MM-8"/>
 <part name="JP3" library="SparkFun" deviceset="M08" device="3.5MM-8"/>
-<part name="JP4" library="SparkFun" deviceset="M04" device="SCREW"/>
+<part name="JP4" library="SparkFun" deviceset="M04" device="SCREW" value="DNP"/>
 <part name="U$10" library="blinkiverse" deviceset="DC_DC_ISOLATED_0505" device=""/>
 <part name="P+8" library="supply1" deviceset="VCC" device=""/>
 <part name="GND20" library="SparkFun" deviceset="GND" device=""/>
