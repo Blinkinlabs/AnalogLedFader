@@ -19,7 +19,7 @@ void setup() {
   
   values = new int[NUMBER_OF_CHANNELS];
   
-  String portName = "/dev/cu.usbmodemfa131";  // TODO: How to request cu.* devices?
+  String portName = "/dev/cu.usbmodemfd121";  // TODO: How to request cu.* devices?
   
   println(portName);
   outPort = new Serial(this, portName, 38400);
@@ -117,9 +117,7 @@ void draw() {
   }
   
   if(randomMotion) {
-    if(random(0,10)>8) {
-      values[(int)random(0,NUMBER_OF_CHANNELS-1)] = (int)random(0,MAX_VALUE);
-    } 
+    values[(int)random(0,NUMBER_OF_CHANNELS)] = (int)random(0,MAX_VALUE);
   }
   
   sendUpdate();
