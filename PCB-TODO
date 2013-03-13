@@ -2,6 +2,11 @@ For RevB release:
 - design to fit into a case
 - Swap out optocoupler for an smt version (SOIC?)
 - Swap out the regulator for smt version
+- Specify correct transistor (APM3055L works)
 - fix silk for OHS logo
-- ground fill?
+- Put ground trace on top, fill both 12V and ground planes in high current area
+- Fill ground plane under processor
+- Fill isolated ground plane on isolated side
+- Fix cap values for crystal
+- Snap mounting holes to 10mm grid
 

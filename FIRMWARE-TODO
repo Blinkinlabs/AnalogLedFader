@@ -1,4 +1,4 @@
 For RevB release:
 - Implement CRC check
 - Implement addressing
-x- Accept data from virtual and hardware serial port
+- Try out a DMX solution
