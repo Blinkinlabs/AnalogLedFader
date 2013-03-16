@@ -4321,7 +4321,7 @@ http://www.fairchildsemi.com/ds/LM/LM7805.pdf</description>
 <part name="P+4" library="supply1" deviceset="VCC" device=""/>
 <part name="C13" library="SparkFun" deviceset="CAP" device="1210" value=".3uF"/>
 <part name="C14" library="SparkFun" deviceset="CAP" device="1210" value=".1uF"/>
-<part name="C15" library="SparkFun" deviceset="CAP" device="0805" value="?uF"/>
+<part name="C15" library="SparkFun" deviceset="CAP" device="0805" value="1uF"/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="C16" library="SparkFun" deviceset="CAP" device="1210" value="4.7uF"/>
 <part name="C17" library="SparkFun" deviceset="CAP" device="1210" value="10uF"/>
@@ -5510,11 +5510,6 @@ http://www.fairchildsemi.com/ds/LM/LM7805.pdf</description>
 <approved hash="104,1,-15.24,-71.12,U$10,VIN,VCC,,,"/>
 <approved hash="104,1,7.62,-71.12,U$10,VOUT+,5V_ISO,,,"/>
 <approved hash="104,1,7.62,-78.74,U$10,VOUT-,GND_ISO,,,"/>
-<approved hash="106,1,73.66,5.08,RX,,,,,"/>
-<approved hash="115,1,285.157,51.8753,JP2,,,,,"/>
-<approved hash="115,1,285.157,23.9353,JP3,,,,,"/>
-<approved hash="115,1,112.353,-20.5147,JP4,,,,,"/>
-<approved hash="115,1,285.157,2.34527,JP5,,,,,"/>
 <approved hash="115,1,114.977,21.3953,JP6,,,,,"/>
 <approved hash="115,1,157.802,41.91,LED1,,,,,"/>
 </errors>
