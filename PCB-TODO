@@ -1,12 +1,14 @@
 For RevB release:
-- design to fit into a case
-- Swap out optocoupler for an smt version (SOIC?)
-- Swap out the regulator for smt version
-- Specify correct transistor (APM3055L works)
+x- Swap out optocoupler for an smt version (SOIC?) (can't, this chip is SOP-8 only)
+x- Swap out the regulator for smt version (78M05, because it's flag is gnd)
+x- Specify correct transistor (APM3055L works)
 - fix silk for OHS logo
-- Put ground trace on top, fill both 12V and ground planes in high current area
-- Fill ground plane under processor
-- Fill isolated ground plane on isolated side
+x- Put ground trace on top, fill both 12V and ground planes in high current area
+x- Fill ground plane under processor
+x- Fill isolated ground plane on isolated side
 - Fix cap values for crystal
-- Snap mounting holes to 10mm grid
 
+For RevC release:
+- design to fit into a case
+- Snap mounting holes to 10mm grid
+- Add in-line fuse to limit max load
