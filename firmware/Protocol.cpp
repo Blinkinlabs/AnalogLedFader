@@ -1,7 +1,6 @@
 #include "Protocol.h"
 
-void Protocol::init(uint8_t address) {
-  m_address = address;
+void Protocol::init() {
   reset();
 }
 
@@ -74,8 +73,18 @@ boolean Protocol::parseByte(uint8_t data) {
   return (m_mode == MODE_PAYLOAD_READY);
 }
 
+uint8_t Protocol::getPacketSize() {
+  if( m_mode == MODE_PAYLOAD_READY) {
+    return m_packetLength;  // first byte of payload data
+  }
+  else {
+    return 0x0;
+  }
+}
+  
 uint8_t* Protocol::getPacket() {
   if( m_mode == MODE_PAYLOAD_READY) {
+    // TODO: Add double-buffering, so we don't stomp on the original data here.
     m_mode = MODE_HEADER0;
     return m_packetData;  // first byte of payload data
   }

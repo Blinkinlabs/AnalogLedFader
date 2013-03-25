@@ -1,4 +1,6 @@
 For RevB release:
 - Implement CRC check
-- Implement addressing
+x- Implement addressing
+
+For the future:
 - Try out a DMX solution
