@@ -847,9 +847,9 @@ Please make sure your boards conform to these design rules.</description>
 <element name="X1" library="SparkFun" package="USB-B-PTH" value="USBPTH" x="29" y="8.75" smashed="yes" rot="R90"/>
 <element name="R5" library="SparkFun" package="0805" value="22" x="30.4" y="14.25" smashed="yes" rot="R90"/>
 <element name="R6" library="SparkFun" package="0805" value="22" x="28.65" y="14.25" smashed="yes" rot="R90"/>
-<element name="C3" library="SparkFun" package="0805" value=".1uF" x="26.75" y="18.5" smashed="yes"/>
-<element name="C5" library="SparkFun" package="0805" value=".1uF" x="26.75" y="24.75" smashed="yes"/>
-<element name="C6" library="SparkFun" package="0805" value=".1uF" x="39.6" y="18" smashed="yes" rot="R90"/>
+<element name="C3" library="SparkFun" package="0805" value="100nF" x="26.75" y="18.5" smashed="yes"/>
+<element name="C5" library="SparkFun" package="0805" value="100nF" x="26.75" y="24.75" smashed="yes"/>
+<element name="C6" library="SparkFun" package="0805" value="100nF" x="39.6" y="18" smashed="yes" rot="R90"/>
 <element name="Q1" library="blinkyboard" package="XS3225" value="16MHz 10ppm" x="40.5" y="21.75" smashed="yes" rot="R270"/>
 <element name="C4" library="SparkFun" package="0805" value="1uF" x="32.5" y="14.25" smashed="yes" rot="R90">
 <attribute name="VALUE" x="33.897" y="13.234" size="0.4064" layer="27" rot="R90"/>
@@ -891,7 +891,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="C11" library="SparkFun" package="0805" value=".3uF" x="18.5" y="17.25" smashed="yes" rot="R90">
 <attribute name="VALUE" x="19.897" y="16.234" size="0.4064" layer="27" rot="R90"/>
 </element>
-<element name="C12" library="SparkFun" package="0805" value=".1uF" x="22.5" y="30.25" smashed="yes" rot="R270">
+<element name="C12" library="SparkFun" package="0805" value="100nF" x="22.5" y="30.25" smashed="yes" rot="R270">
 <attribute name="VALUE" x="21.103" y="31.266" size="0.4064" layer="27" rot="R270"/>
 </element>
 <element name="JP6" library="SparkFun" package="1X05" value="" x="22.5" y="26.5" smashed="yes" rot="R270">
@@ -900,7 +900,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="C13" library="SparkFun" package="1210" value=".3uF" x="18.5" y="17.25" smashed="yes" rot="R270">
 <attribute name="VALUE" x="17.8" y="18.15" size="0.4064" layer="27" rot="R270"/>
 </element>
-<element name="C14" library="SparkFun" package="1210" value=".1uF" x="22.5" y="30.25" smashed="yes" rot="R90">
+<element name="C14" library="SparkFun" package="1210" value="100nF" x="22.5" y="30.25" smashed="yes" rot="R90">
 <attribute name="VALUE" x="23.2" y="29.35" size="0.4064" layer="27" rot="R90"/>
 </element>
 <element name="C15" library="SparkFun" package="0805" value="1uF" x="26.75" y="20.25" smashed="yes">
@@ -943,7 +943,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="IC2" library="linear" package="TO252" value="7805DT" x="13.75" y="24.25" smashed="yes" rot="R90">
 <attribute name="VALUE" x="16.29" y="29.33" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="C22" library="SparkFun" package="0805" value=".1uF" x="36.75" y="27.75" rot="R270"/>
+<element name="C22" library="SparkFun" package="0805" value="100nF" x="36.75" y="27.75" rot="R270"/>
 <element name="C23" library="SparkFun" package="PANASONIC_E" value="" x="45.75" y="54.75" smashed="yes" rot="R90">
 <attribute name="VALUE" x="48.29" y="53.48" size="0.4064" layer="27" rot="R90"/>
 </element>

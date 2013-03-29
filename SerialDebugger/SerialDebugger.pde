@@ -7,14 +7,14 @@ Serial outPort;
 
 String VERSION_STRING = "0.1";
 
-int NUMBER_OF_CHANNELS = 8;
+int NUMBER_OF_CHANNELS = 16;
 int MAX_VALUE = 65535;
 
 int[] values; // Light values to send
 
 void setup() {
-  size(600,300);
-  frameRate(30);
+  size(600,600);
+  frameRate(60);
   cp5 = new ControlP5(this);
   
   values = new int[NUMBER_OF_CHANNELS];

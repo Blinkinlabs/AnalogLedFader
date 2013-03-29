@@ -4273,9 +4273,9 @@ http://www.fairchildsemi.com/ds/LM/LM7805.pdf</description>
 <part name="X1" library="SparkFun" deviceset="USB" device="PTH"/>
 <part name="R5" library="SparkFun" deviceset="RESISTOR" device="" value="22"/>
 <part name="R6" library="SparkFun" deviceset="RESISTOR" device="" value="22"/>
-<part name="C3" library="SparkFun" deviceset="CAP" device="0805" value=".1uF"/>
-<part name="C5" library="SparkFun" deviceset="CAP" device="0805" value=".1uF"/>
-<part name="C6" library="SparkFun" deviceset="CAP" device="0805" value=".1uF"/>
+<part name="C3" library="SparkFun" deviceset="CAP" device="0805" value="100nF"/>
+<part name="C5" library="SparkFun" deviceset="CAP" device="0805" value="100nF"/>
+<part name="C6" library="SparkFun" deviceset="CAP" device="0805" value="100nF"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="P+2" library="supply1" deviceset="VCC" device=""/>
 <part name="Q1" library="blinkyboard" deviceset="CRYSTAL" device="" value="16MHz 10ppm"/>
@@ -4314,13 +4314,13 @@ http://www.fairchildsemi.com/ds/LM/LM7805.pdf</description>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
 <part name="C11" library="SparkFun" deviceset="CAP" device="0805" value=".3uF"/>
-<part name="C12" library="SparkFun" deviceset="CAP" device="0805" value=".1uF"/>
+<part name="C12" library="SparkFun" deviceset="CAP" device="0805" value="100nF"/>
 <part name="JP6" library="SparkFun" deviceset="M05" device="PTH"/>
 <part name="P+3" library="supply1" deviceset="VCC" device=""/>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
 <part name="P+4" library="supply1" deviceset="VCC" device=""/>
 <part name="C13" library="SparkFun" deviceset="CAP" device="1210" value=".3uF"/>
-<part name="C14" library="SparkFun" deviceset="CAP" device="1210" value=".1uF"/>
+<part name="C14" library="SparkFun" deviceset="CAP" device="1210" value="100nF"/>
 <part name="C15" library="SparkFun" deviceset="CAP" device="0805" value="1uF"/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="C16" library="SparkFun" deviceset="CAP" device="1210" value="4.7uF"/>
@@ -4337,7 +4337,7 @@ http://www.fairchildsemi.com/ds/LM/LM7805.pdf</description>
 <part name="R15" library="SparkFun" deviceset="RESISTOR" device="" value="10K"/>
 <part name="R16" library="SparkFun" deviceset="RESISTOR" device="" value="10K"/>
 <part name="IC2" library="linear" deviceset="78*" device="DT" technology="05"/>
-<part name="C22" library="SparkFun" deviceset="CAP" device="0805" value=".1uF"/>
+<part name="C22" library="SparkFun" deviceset="CAP" device="0805" value="100nF"/>
 <part name="C23" library="SparkFun" deviceset="CAP_POL" device="E"/>
 <part name="C24" library="SparkFun" deviceset="CAP_POL" device="E"/>
 <part name="C25" library="SparkFun" deviceset="CAP_POL" device="E"/>

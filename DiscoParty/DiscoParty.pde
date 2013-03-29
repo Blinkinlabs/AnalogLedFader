@@ -26,12 +26,12 @@ LedOutput led;
 
 float kickSize, snareSize, hatSize;
 
-int numberOfChannels = 8*2;
+int numberOfChannels = 8*4;
 int[] values;
 
 void setup()
 {
-  frameRate(60);
+  frameRate(40);
   size(512, 200, P3D);
   
   minim = new Minim(this);
@@ -80,24 +80,37 @@ void draw()
   text("HAT", 3*width/4, height/2);
   
   for(int i = 0; i < numberOfChannels; i++) {
-    switch(i%3) {
+    switch(i%16) {
       case 0:
-        values[i] = (int)((kickSize-16)*2045);
+        values[i] = (int)((snareSize-16+.2)*2045);
         break;
       case 1:
-        values[i] = (int)((snareSize-16)*2045);
+        values[i] = (int)((kickSize-16)*2045);
         break;
       case 2:
-        values[i] = (int)((hatSize-16)*2045);
+        values[i] = (int)((hatSize-16+.2)*2045);
+        break;
+      case 8:
+        values[i] = (int)((kickSize-16+.2)*2045);
+        break;
+      case 9:
+        values[i] = (int)((hatSize-16+.2)*2045);
+        break;
+      case 10:
+        values[i] = (int)((snareSize-16)*2045);
+        break;
+      default:
+        values[i] = 0;
         break;
     }
   }
 
   led.sendUpdate(values);
   
-  kickSize = constrain(kickSize * 0.95, 16, 32);
-  snareSize = constrain(snareSize * 0.95, 16, 32);
-  hatSize = constrain(hatSize * 0.95, 16, 32);
+  float fadePercent = .93;
+  kickSize = constrain(kickSize * fadePercent, 16, 32);
+  snareSize = constrain(snareSize * fadePercent, 16, 32);
+  hatSize = constrain(hatSize * fadePercent, 16, 32);
   
   println(frameRate);
 }
