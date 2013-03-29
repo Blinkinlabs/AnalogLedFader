@@ -41,6 +41,7 @@ uint16_t HardPWM::read(uint8_t channel) {
 }
 
 void HardPWM::begin() {
+  
   // Configure timer1 for 16-bit, PWM, Phase and Frequency Correct operation at @15.625KHz
   bitSet(DDRB, 7);  // OCR1C, PB7 (PWM0)
   bitSet(DDRB, 5);  // OCR1A, PB5 (PWM2)
@@ -69,4 +70,9 @@ void HardPWM::begin() {
   
   TC4H = 0x03;
   OCR4C = 0xFF;  // OCR4C contains the TOP value
+  
+  // Clear the initial output values
+  for(uint8_t i = 0; i < pwmCount; i++) {
+    write(i, 0);
+  }
 }

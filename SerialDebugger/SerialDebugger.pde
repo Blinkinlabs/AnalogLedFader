@@ -7,7 +7,7 @@ Serial outPort;
 
 String VERSION_STRING = "0.1";
 
-int NUMBER_OF_CHANNELS = 6;
+int NUMBER_OF_CHANNELS = 8;
 int MAX_VALUE = 65535;
 
 int[] values; // Light values to send
@@ -19,7 +19,7 @@ void setup() {
   
   values = new int[NUMBER_OF_CHANNELS];
   
-  String portName = "/dev/cu.usbmodemfd121";  // TODO: How to request cu.* devices?
+  String portName = "/dev/cu.usbmodemfa131";  // TODO: How to request cu.* devices?
   
   println(portName);
   outPort = new Serial(this, portName, 38400);
