@@ -15,6 +15,8 @@
 #define HEADER0             0xde
 #define HEADER1             0xad
 
+// AnalogLED protocol decoder. Expects frames of data that look like this:
+// [header (2 bytes)][length (1 byte)][payload (length bytes)][ibutton crc (1 byte)]
 class Protocol {
 private:
   uint8_t m_expectedLength;                ///< Number of bytes expected in the current packet  
@@ -43,10 +45,12 @@ public:
   // Get the packet size (in bytes)
   uint8_t getPacketSize();
   
-  // Get the packet data as an 8-bit array
+  // If a full packet was received, returns the address to the data and resets the
+  // packet state machine. Otherwise, returns null
   uint8_t* getPacket();
 
-  // Get the packet data as a 16-bit array
+  // If a full packet was received, returns the address to the data as a 16-bit array,
+  // and resets the packet state machine. Otherwise, returns null
   uint16_t* getPacket16();
 };
 

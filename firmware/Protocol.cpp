@@ -5,9 +5,9 @@ void Protocol::init() {
 }
 
 void Protocol::reset() {
-  for(uint8_t i = 0; i < MAX_DATA_SIZE; i++) {
-    m_packetData[i] = 0;
-  }
+//  for(uint8_t i = 0; i < MAX_DATA_SIZE; i++) {
+//    m_packetData[i] = 0;
+//  }
 
   m_crc = 0;
   m_packetLength = 0;
@@ -74,7 +74,7 @@ boolean Protocol::parseByte(uint8_t data) {
 }
 
 uint8_t Protocol::getPacketSize() {
-  if( m_mode == MODE_PAYLOAD_READY) {
+  if(m_mode == MODE_PAYLOAD_READY) {
     return m_packetLength;  // first byte of payload data
   }
   else {
@@ -83,8 +83,7 @@ uint8_t Protocol::getPacketSize() {
 }
   
 uint8_t* Protocol::getPacket() {
-  if( m_mode == MODE_PAYLOAD_READY) {
-    // TODO: Add double-buffering, so we don't stomp on the original data here.
+  if(m_mode == MODE_PAYLOAD_READY) {
     m_mode = MODE_HEADER0;
     return m_packetData;  // first byte of payload data
   }
@@ -94,12 +93,12 @@ uint8_t* Protocol::getPacket() {
 }
 
 uint16_t* Protocol::getPacket16() {
-  if( m_mode == MODE_PAYLOAD_READY) {
+  if(m_mode == MODE_PAYLOAD_READY) {
     m_mode = MODE_HEADER0;
     return reinterpret_cast<uint16_t*>(m_packetData);  // first byte of payload data
   }
   else {
-    return 0x0000;
+    return 0x0;
   }
 }
 
@@ -109,7 +108,7 @@ void Protocol::updateCRC(uint8_t data) {
   m_crc = m_crc ^ data;
   for (i = 0; i < 8; i++)
   {
-    if (m_crc & 0x01) {
+    if(m_crc & 0x01) {
       m_crc = (m_crc >> 1) ^ 0x8C;
     }
     else {

@@ -3,7 +3,8 @@
 
 #include <Arduino.h>
 
-#define pwmCount  6
+// Number of PWM outputs enabled
+#define pwmCount  6 
 
 // This is an alternate PWM interface for Arduino/Atmega32u4, that provides 16 MHz,
 // 16- and 10-bit PWM outputs on the following channels:
@@ -13,8 +14,7 @@
 // PB5 (PWM2) (1 bit)
 // PB6 (PWM3) (1 bit)
 // PC6 (PWM4) (1 bit)
-// PC7 (PWM5) (1 bit)
-  
+// PC7 (PWM5) (1 bit)  
 class HardPWM {
  private:
   uint16_t m_pwmValues[pwmCount];  // currrent logarithmic PWM setting for each PWM output

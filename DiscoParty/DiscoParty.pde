@@ -17,8 +17,8 @@ import ddf.minim.*;
 import ddf.minim.analysis.*;
 
 Minim minim;
-AudioPlayer song;
 AudioInput audioin;
+AudioOutput audioout;  // Need to run soundflower for this to work...
 
 BeatDetect beat;
 BeatListener bl;
@@ -26,7 +26,7 @@ LedOutput led;
 
 float kickSize, snareSize, hatSize;
 
-int numberOfChannels = 8*4;
+int numberOfChannels = 13*6;
 int[] values;
 
 void setup()
@@ -36,16 +36,19 @@ void setup()
   
   minim = new Minim(this);
   audioin = minim.getLineIn(Minim.STEREO, 2048);
-    
-  led = new LedOutput(this, "/dev/cu.usbmodemfa131", numberOfChannels);
+  
+  // auto connect to the first arduino-like thing we find
+  for(String p : Serial.list()) {
+    if(p.startsWith("/dev/cu.usbmodem")) {
+      led = new LedOutput(this, p, numberOfChannels);
+    }
+  }
+
   values = new int[numberOfChannels];
   
-//  song = minim.loadFile("Fog.mp3", 2048);
-//  song.play();
   // a beat detection object that is FREQ_ENERGY mode that 
   // expects buffers the length of song's buffer size
   // and samples captured at songs's sample rate
-//  beat = new BeatDetect(song.bufferSize(), song.sampleRate());
   beat = new BeatDetect(audioin.bufferSize(), audioin.sampleRate());
   
   // set the sensitivity to 300 milliseconds
@@ -54,10 +57,10 @@ void setup()
   // algorithm if it is giving too many false-positives. The default value is 10, 
   // which is essentially no damping. If you try to set the sensitivity to a negative value, 
   // an error will be reported and it will be set to 10 instead. 
-  beat.setSensitivity(300);  
+  beat.setSensitivity(100);  
   kickSize = snareSize = hatSize = 16;
+  
   // make a new beat listener, so that we won't miss any buffers for the analysis
-//  bl = new BeatListener(beat, song);  
   bl = new BeatListener(beat, audioin); 
   
   textFont(createFont("Helvetica", 16));
@@ -80,7 +83,7 @@ void draw()
   text("HAT", 3*width/4, height/2);
   
   for(int i = 0; i < numberOfChannels; i++) {
-    switch(i%16) {
+    switch(i%3) {
       case 0:
         values[i] = (int)((snareSize-16+.2)*2045);
         break;
@@ -90,15 +93,6 @@ void draw()
       case 2:
         values[i] = (int)((hatSize-16+.2)*2045);
         break;
-      case 8:
-        values[i] = (int)((kickSize-16+.2)*2045);
-        break;
-      case 9:
-        values[i] = (int)((hatSize-16+.2)*2045);
-        break;
-      case 10:
-        values[i] = (int)((snareSize-16)*2045);
-        break;
       default:
         values[i] = 0;
         break;
@@ -107,7 +101,7 @@ void draw()
 
   led.sendUpdate(values);
   
-  float fadePercent = .93;
+  float fadePercent = .95;
   kickSize = constrain(kickSize * fadePercent, 16, 32);
   snareSize = constrain(snareSize * fadePercent, 16, 32);
   hatSize = constrain(hatSize * fadePercent, 16, 32);
@@ -118,7 +112,6 @@ void draw()
 void stop()
 {
   // always close Minim audio classes when you are finished with them
-//  song.close();
   audioin.close();
 
   // always stop Minim before exiting

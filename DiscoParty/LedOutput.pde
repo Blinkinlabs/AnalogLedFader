@@ -2,22 +2,21 @@
 
 class LedOutput
 {
-  private String portName;  // TODO: How to request cu.* devices?
-  private Serial outPort;
+  private String m_portName;
+  private Serial m_outPort;
 
-  private int numberOfChannels;
-  private byte data[];
+  private int m_numberOfChannels;
+  private byte m_data[];
 
   LedOutput(PApplet parent, String portName, int numberOfChannels) {
-    this.portName = portName;
-    this.numberOfChannels = numberOfChannels;
+    m_portName = portName;
+    m_numberOfChannels = numberOfChannels;
     
-    this.data = new byte[2+numberOfChannels*2+1];
+    m_data = new byte[2+numberOfChannels*2+1];
 
     println("Connecting to LED Fader on: " + portName);
-    this.outPort = new Serial(parent, portName, 115200);
+    m_outPort = new Serial(parent, portName, 115200);
   }
-
 
   
   void sendUpdate(int[] values) {
@@ -35,14 +34,14 @@ class LedOutput
 //    data[2+numberOfChannels] = (byte)0xff;  // TODO: Implement CRC
 //    this.outPort.write(data);
 
-    this.outPort.write(0xde);
-    this.outPort.write(0xad);
-    this.outPort.write(numberOfChannels*2);
-    for(int i = 0; i < numberOfChannels; i++) {
-      this.outPort.write(values[i] & 0xFF);        // low byte
-      this.outPort.write((values[i] >> 8) & 0xFF); // high byte
+    m_outPort.write(0xde);
+    m_outPort.write(0xad);
+    m_outPort.write(m_numberOfChannels*2);
+    for(int i = 0; i < m_numberOfChannels; i++) {
+      m_outPort.write(values[i] & 0xFF);        // low byte
+      m_outPort.write((values[i] >> 8) & 0xFF); // high byte
     }
-    this.outPort.write(0xff);  // TODO: Implement CRC
+    m_outPort.write(0xff);  // TODO: Implement CRC
   }
 }
 
