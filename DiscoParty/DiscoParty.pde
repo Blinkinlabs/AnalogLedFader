@@ -26,12 +26,19 @@ LedOutput led;
 
 float kickSize, snareSize, hatSize;
 
-int numberOfChannels = 13*6;
+int numberOfBoxes = 13;
+int channelsPerBox = 6;
+int numberOfChannels = numberOfBoxes*channelsPerBox;
 int[] values;
+
+float globalBrightness = .05;
+
+float globalColorAngle = PI/2;
+float globalColorSpeed = .05;
 
 void setup()
 {
-  frameRate(40);
+  frameRate(90);
   size(512, 200, P3D);
   
   minim = new Minim(this);
@@ -71,42 +78,52 @@ void setup()
 void draw()
 {
   background(0);
-  fill(255);
-  if ( beat.isKick() ) kickSize = 32;
-  if ( beat.isSnare() ) snareSize = 32;
-  if ( beat.isHat() ) hatSize = 32;
-  textSize(kickSize);
-  text("KICK", width/4, height/2);
-  textSize(snareSize);
-  text("SNARE", width/2, height/2);
-  textSize(hatSize);
-  text("HAT", 3*width/4, height/2);
-  
-  for(int i = 0; i < numberOfChannels; i++) {
-    switch(i%3) {
-      case 0:
-        values[i] = (int)((snareSize-16+.2)*2045);
-        break;
-      case 1:
-        values[i] = (int)((kickSize-16)*2045);
-        break;
-      case 2:
-        values[i] = (int)((hatSize-16+.2)*2045);
-        break;
-      default:
-        values[i] = 0;
-        break;
+//  fill(255);
+//  if ( beat.isKick() ) kickSize = 32;
+//  if ( beat.isSnare() ) snareSize = 32;
+//  if ( beat.isHat() ) hatSize = 32;
+//  textSize(kickSize);
+//  text("KICK", width/4, height/2);
+//  textSize(snareSize);
+//  text("SNARE", width/2, height/2);
+//  textSize(hatSize);
+//  text("HAT", 3*width/4, height/2);
+//  
+//  for(int i = 0; i < numberOfChannels; i++) {
+//    switch(i%3) {
+//      case 0:
+//        values[i] = (int)(globalBrightness*(hatSize-16+.2)*2045);
+//        break;
+//      case 1:
+//        values[i] = (int)(globalBrightness*(kickSize-16)*2045);
+//        break;
+//      case 2:
+//        values[i] = (int)(globalBrightness*(snareSize-16+.2)*2045);
+//        break;
+//      default:
+//        values[i] = 0;
+//        break;
+//    }
+//  }
+
+  for(int i = 0; i < numberOfBoxes; i++) {
+    int b = int(globalBrightness*(sin(globalColorAngle + 2*PI*(((float)i)/numberOfBoxes)) +1)*65535/2);
+    
+    for(int j = 0; j < channelsPerBox; j++) {
+      values[i*channelsPerBox + j] = b;
     }
   }
 
   led.sendUpdate(values);
   
-  float fadePercent = .95;
-  kickSize = constrain(kickSize * fadePercent, 16, 32);
-  snareSize = constrain(snareSize * fadePercent, 16, 32);
-  hatSize = constrain(hatSize * fadePercent, 16, 32);
+//  float fadePercent = .95;
+//  kickSize = constrain(kickSize * fadePercent, 16, 32);
+//  snareSize = constrain(snareSize * fadePercent, 16, 32);
+//  hatSize = constrain(hatSize * fadePercent, 16, 32);
   
   println(frameRate);
+
+  globalColorAngle += globalColorSpeed;
 }
 
 void stop()

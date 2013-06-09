@@ -2,10 +2,10 @@
 #include "Protocol.h"
 
 // Address that this device responds to. Change this for each board.
-#define DEVICE_ADDRESS   0
+#define DEVICE_ADDRESS   8
 
-// System baud rate. Leave at 115200 (13 boards * 6 channels * 16 bits/channel * 60fps = 74880baud minimum)
-#define BAUD_RATE 115200
+// System baud rate. Leave at 250000 (13 boards * 6 channels * 16 bits/channel * 60fps = 74880baud minimum)
+#define BAUD_RATE 250000
 
 #define PIN_STATUS_LED   3
 
@@ -30,6 +30,16 @@ void setup() {
   hardPWM.begin();
 }
 
+void handleData(uint8_t dataSize, uint16_t* data) {
+  // The data size is nonzero only if we already received a full packet.
+  if(dataSize >= (DEVICE_ADDRESS + 1)*pwmCount*2) {
+    for(uint8_t i = 0; i < pwmCount; i++) {
+      hardPWM.write(i, data[i + DEVICE_ADDRESS*pwmCount]);
+    }
+  }
+}
+
+
 void loop() {
 
   // Handle incoming data from USB
@@ -39,12 +49,7 @@ void loop() {
     if(usbReceiver.parseByte(Serial.read())) {
       uint8_t dataSize = usbReceiver.getPacketSize();
       uint16_t* data = usbReceiver.getPacket16();
-      
-      if(dataSize >= (DEVICE_ADDRESS+8)*2) {
-        for(uint8_t i = 0; i < pwmCount; i++) {
-          hardPWM.write(i, data[i]);
-        }
-      }
+      handleData(dataSize, data);
     }
   }
 
@@ -55,14 +60,9 @@ void loop() {
     if(rs485Receiver.parseByte(Serial1.read())) {
       uint8_t dataSize = rs485Receiver.getPacketSize();
       uint16_t* data = rs485Receiver.getPacket16();
-      
-      // The data size is only large if we already got 
-      if(dataSize >= (DEVICE_ADDRESS+8)*2) {
-        for(uint8_t i = 0; i < pwmCount; i++) {
-          hardPWM.write(i, data[i + DEVICE_ADDRESS]);
-        }
-      }
+      handleData(dataSize, data);
     }
+    digitalWrite(PIN_STATUS_LED, HIGH);
   }
 }
 

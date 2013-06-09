@@ -1,28 +1,33 @@
 import controlP5.*;
-
 import processing.serial.*;
 
 ControlP5 cp5;
-Serial outPort;
 
 String VERSION_STRING = "0.1";
 
-int NUMBER_OF_CHANNELS = 16;
+int NUMBER_OF_CHANNELS = 13*6;
 int MAX_VALUE = 65535;
 
+float globalBrightness = .1;
+
+LedOutput led;
+String portName;
 int[] values; // Light values to send
 
 void setup() {
-  size(600,600);
+  size(1600,650);
   frameRate(60);
   cp5 = new ControlP5(this);
   
   values = new int[NUMBER_OF_CHANNELS];
   
-  String portName = "/dev/cu.usbmodemfa131";  // TODO: How to request cu.* devices?
-  
-  println(portName);
-  outPort = new Serial(this, portName, 38400);
+  // auto connect to the first arduino-like thing we find
+  for(String p : Serial.list()) {
+    if(p.startsWith("/dev/cu.usbmodem")) {
+      portName = p;
+      led = new LedOutput(this, p, NUMBER_OF_CHANNELS);
+    }
+  }
   
   // Position controls
   cp5.addToggle("rangeTest")
@@ -35,13 +40,13 @@ void setup() {
    
   
   for(int i = 0; i < NUMBER_OF_CHANNELS; i++) {
-    int speakersPerCol = 17;
+    int speakersPerCol = 18;
     
     values[i] = 0;
     
     Slider s = cp5.addSlider("value[" + i + "]")
      .setPosition(150 + (i/speakersPerCol)*250,10+(i%speakersPerCol)*35)
-     .setSize(300,30)
+     .setSize(150,30)
      .setRange(0,MAX_VALUE)
      .setSliderMode(Slider.FLEXIBLE)
      .setDecimalPrecision(0)
@@ -69,18 +74,6 @@ void setup() {
      .setPosition(10,280)
      ;
   }   
-}
-
-
-void sendUpdate() {
-  outPort.write(0xde);
-  outPort.write(0xad);
-  outPort.write(NUMBER_OF_CHANNELS*2);
-  for(int i = 0; i < NUMBER_OF_CHANNELS; i++) {
-    outPort.write(values[i] & 0xFF);        // low byte
-    outPort.write((values[i] >> 8) & 0xFF); // high byte
-  }
-  outPort.write(0xff);  // TODO: Implement CRC
 }
 
 boolean rangeTest = false;
@@ -120,7 +113,7 @@ void draw() {
     values[(int)random(0,NUMBER_OF_CHANNELS)] = (int)random(0,MAX_VALUE);
   }
   
-  sendUpdate();
+  led.sendUpdate(values);
 }
 
 void controlEvent(ControlEvent theEvent) {

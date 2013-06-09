@@ -24,12 +24,10 @@ class LedOutput
     data[1] = (byte)0xad;
     data[2] = (byte)(m_numberOfChannels*2);
     for (int i = 0; i < m_numberOfChannels; i++) {
-      data[3+i*2] =   (byte)((values[i])      & 0xFF); // low byte
-      data[3+i*2+1] = (byte)((values[i] >> 8) & 0xFF); // high byte
+      data[3+i*2] =   (byte)(( int(values[i]*globalBrightness))       & 0xFF); // low byte
+      data[3+i*2+1] = (byte)(((int(values[i]*globalBrightness)) >> 8) & 0xFF); // high byte
     }
     data[3+m_numberOfChannels*2] = (byte)0xff;  // TODO: Implement CRC
-    
-    // TODO: chunk here?
     m_outPort.write(data);
   }
 }
