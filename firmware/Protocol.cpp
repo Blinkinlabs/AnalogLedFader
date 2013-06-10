@@ -5,10 +5,6 @@ void Protocol::init() {
 }
 
 void Protocol::reset() {
-//  for(uint8_t i = 0; i < MAX_DATA_SIZE; i++) {
-//    m_packetData[i] = 0;
-//  }
-
   m_crc = 0;
   m_packetLength = 0;
   m_mode = MODE_HEADER0;
@@ -26,11 +22,11 @@ boolean Protocol::parseByte(uint8_t data) {
   case MODE_HEADER0:
   case MODE_PAYLOAD_READY: // If we get new data before a payload is handled, just start over.
     if(data == HEADER0) {
+      reset();
       m_mode = MODE_HEADER1;
       updateCRC(data);
     }
     else {
-      reset();
     }
     break;
   case MODE_HEADER1:
@@ -59,12 +55,12 @@ boolean Protocol::parseByte(uint8_t data) {
     } 
     break;
   case MODE_CRC:
-    //      if(data == m_crc) {
-    m_mode = MODE_PAYLOAD_READY;
-    //      }
-    //      else {
-    //        m_mode = MODE_HEADER0;
-    //      }
+    if(data == m_crc) {
+      m_mode = MODE_PAYLOAD_READY;
+    }
+    else {
+      reset();
+    }
     break;
   default:
     reset();

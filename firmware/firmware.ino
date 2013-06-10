@@ -2,7 +2,7 @@
 #include "Protocol.h"
 
 // Address that this device responds to. Change this for each board.
-#define DEVICE_ADDRESS   8
+#define DEVICE_ADDRESS   12
 
 // System baud rate. Leave at 250000 (13 boards * 6 channels * 16 bits/channel * 60fps = 74880baud minimum)
 #define BAUD_RATE 250000

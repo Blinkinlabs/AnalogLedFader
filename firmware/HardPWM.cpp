@@ -67,7 +67,7 @@ void HardPWM::begin() {
 
     TCCR4C = (1 << COM4D1) | (0 << COM4D0) | (1 << PWM4D); // Note: set TCCR4C before TCCR4A because of shadow bits.
     TCCR4A = (1 << COM4A1) | (0 << COM4A0) | (1 << PWM4A) | (0 << PWM4B);
-    TCCR4B = (0 << CS43) | (1 << CS42) | (1 << CS41) | (0 << CS40);
+    TCCR4B = (0 << CS43) | (1 << CS42) | (0 << CS41) | (1 << CS40);
     TCCR4D = (0 << WGM41) | (1 << WGM40);
   
     TC4H = 0x03;

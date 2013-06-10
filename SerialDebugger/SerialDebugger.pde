@@ -97,7 +97,7 @@ void draw() {
         newPosition = 0;
       }
       else {
-        newPosition = MAX_VALUE;
+        newPosition = int(MAX_VALUE*globalBrightness);
       }
       
       for(int i = 0; i < NUMBER_OF_CHANNELS; i++) {

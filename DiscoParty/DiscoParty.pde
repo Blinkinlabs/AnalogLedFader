@@ -1,18 +1,5 @@
 import processing.serial.*;
 
-/**
-  * This sketch demonstrates how to use the BeatDetect object in FREQ_ENERGY mode.<br />
-  * You can use <code>isKick</code>, <code>isSnare</code>, </code>isHat</code>, <code>isRange</code>, 
-  * and <code>isOnset(int)</code> to track whatever kind of beats you are looking to track, they will report 
-  * true or false based on the state of the analysis. To "tick" the analysis you must call <code>detect</code> 
-  * with successive buffers of audio. You can do this inside of <code>draw</code>, but you are likely to miss some 
-  * audio buffers if you do this. The sketch implements an <code>AudioListener</code> called <code>BeatListener</code> 
-  * so that it can call <code>detect</code> on every buffer of audio processed by the system without repeating a buffer 
-  * or missing one.
-  * <p>
-  * This sketch plays an entire song so it may be a little slow to load.
-  */
-
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 
@@ -29,12 +16,16 @@ float kickSize, snareSize, hatSize;
 int numberOfBoxes = 13;
 int channelsPerBox = 6;
 int numberOfChannels = numberOfBoxes*channelsPerBox;
+
+
 int[] values;
 
-float globalBrightness = .05;
+float gammaValue = .7;
+
+float globalBrightness = .1;
 
 float globalColorAngle = PI/2;
-float globalColorSpeed = .05;
+float globalColorSpeed = .1;
 
 void setup()
 {
@@ -107,7 +98,7 @@ void draw()
 //  }
 
   for(int i = 0; i < numberOfBoxes; i++) {
-    int b = int(globalBrightness*(sin(globalColorAngle + 2*PI*(((float)i)/numberOfBoxes)) +1)*65535/2);
+    int b = int(globalBrightness*(sin(globalColorAngle + 2*PI*(((float)i)/numberOfBoxes*3)) +1)*65535/2);
     
     for(int j = 0; j < channelsPerBox; j++) {
       values[i*channelsPerBox + j] = b;
@@ -121,7 +112,7 @@ void draw()
 //  snareSize = constrain(snareSize * fadePercent, 16, 32);
 //  hatSize = constrain(hatSize * fadePercent, 16, 32);
   
-  println(frameRate);
+//  println(frameRate);
 
   globalColorAngle += globalColorSpeed;
 }
