@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -137,16 +137,13 @@
 <hole x="84" y="72" drill="3.2"/>
 <hole x="3" y="72" drill="3.2"/>
 <hole x="3" y="3" drill="3.2"/>
-<text x="77" y="3.5" size="1.4224" layer="25" font="vector" align="bottom-right">keep
-it  
-locked</text>
-<text x="26.75" y="46.75" size="1.778" layer="25" font="vector" rot="R180" align="bottom-right">Blinkiverse</text>
+<text x="26.75" y="46.75" size="1.778" layer="25" font="vector" rot="R180" align="bottom-right">Blinkinlabs</text>
 <hole x="39" y="3" drill="3.2"/>
 <hole x="3" y="37.5" drill="3.2"/>
 <hole x="84" y="37.5" drill="3.2"/>
 <hole x="48" y="72" drill="3.2"/>
 <text x="22" y="44" size="1.778" layer="25" font="vector" rot="R180" align="bottom-right">Analog LED Fader</text>
-<text x="21" y="41.25" size="1.4224" layer="25" font="vector" rot="R180" align="bottom-right">blinkiverse.com/ledfader</text>
+<text x="21" y="41.25" size="1.4224" layer="25" font="vector" rot="R180" align="bottom-right">blinkinlabs.com/ledfader</text>
 </plain>
 <libraries>
 <library name="reprap">
@@ -1896,10 +1893,4 @@ Please make sure your boards conform to these design rules.</description>
 </signals>
 </board>
 </drawing>
-<compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
-</compatibility>
 </eagle>
