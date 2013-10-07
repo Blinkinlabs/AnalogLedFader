@@ -3558,7 +3558,7 @@ by exp-project-lbr.ulp</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="blinkiverse">
+<library name="blinkinlabs">
 <description>Generated from &lt;b&gt;atmega32u4bb.sch&lt;/b&gt;&lt;p&gt;
 by exp-project-lbr.ulp</description>
 <packages>
@@ -4263,7 +4263,7 @@ http://www.fairchildsemi.com/ds/LM/LM7805.pdf</description>
 <part name="U$2" library="sonos_library" deviceset="2X3HEADER" device=""/>
 <part name="P+5" library="supply1" deviceset="VCC" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
-<part name="U1" library="blinkiverse" deviceset="ARDUINO_LEONARDO-REV3B_SMARTPRJ_ATMEGA32U4-XU" device="MU"/>
+<part name="U1" library="blinkinlabs" deviceset="ARDUINO_LEONARDO-REV3B_SMARTPRJ_ATMEGA32U4-XU" device="MU"/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="C1" library="SparkFun" deviceset="CAP" device="0805" value="16pf"/>
@@ -4282,25 +4282,25 @@ http://www.fairchildsemi.com/ds/LM/LM7805.pdf</description>
 <part name="C4" library="SparkFun" deviceset="CAP" device="0805" value="1uF"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="J3" library="con-amp" deviceset="520426-4" device="" value="RS485"/>
-<part name="U$1" library="blinkiverse" deviceset="N_MOSFET" device=""/>
+<part name="U$1" library="blinkinlabs" deviceset="N_MOSFET" device=""/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
-<part name="U$3" library="blinkiverse" deviceset="N_MOSFET" device=""/>
+<part name="U$3" library="blinkinlabs" deviceset="N_MOSFET" device=""/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
-<part name="U$4" library="blinkiverse" deviceset="N_MOSFET" device=""/>
+<part name="U$4" library="blinkinlabs" deviceset="N_MOSFET" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
-<part name="U$5" library="blinkiverse" deviceset="N_MOSFET" device=""/>
+<part name="U$5" library="blinkinlabs" deviceset="N_MOSFET" device=""/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
-<part name="U$6" library="blinkiverse" deviceset="N_MOSFET" device=""/>
+<part name="U$6" library="blinkinlabs" deviceset="N_MOSFET" device=""/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
-<part name="U$7" library="blinkiverse" deviceset="N_MOSFET" device=""/>
+<part name="U$7" library="blinkinlabs" deviceset="N_MOSFET" device=""/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
-<part name="U$8" library="blinkiverse" deviceset="N_MOSFET" device=""/>
+<part name="U$8" library="blinkinlabs" deviceset="N_MOSFET" device=""/>
 <part name="GND16" library="supply1" deviceset="GND" device=""/>
-<part name="U$9" library="blinkiverse" deviceset="N_MOSFET" device=""/>
+<part name="U$9" library="blinkinlabs" deviceset="N_MOSFET" device=""/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
 <part name="JP2" library="SparkFun" deviceset="M08" device="3.5MM-8"/>
 <part name="JP3" library="SparkFun" deviceset="M08" device="3.5MM-8"/>
-<part name="U$10" library="blinkiverse" deviceset="DC_DC_ISOLATED_0505" device=""/>
+<part name="U$10" library="blinkinlabs" deviceset="DC_DC_ISOLATED_0505" device=""/>
 <part name="P+8" library="supply1" deviceset="VCC" device=""/>
 <part name="GND20" library="SparkFun" deviceset="GND" device=""/>
 <part name="C9" library="SparkFun" deviceset="CAP" device="0805" value="4.7uF"/>

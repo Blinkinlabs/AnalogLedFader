@@ -475,7 +475,7 @@ by exp-project-lbr.ulp</description>
 </package>
 </packages>
 </library>
-<library name="blinkiverse">
+<library name="blinkinlabs">
 <description>Generated from &lt;b&gt;atmega32u4bb.sch&lt;/b&gt;&lt;p&gt;
 by exp-project-lbr.ulp</description>
 <packages>
@@ -837,7 +837,7 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="52.074" y="0.448" size="1.778" layer="27"/>
 </element>
 <element name="U$2" library="sonos_library" package="2X3HEADER" value="2X3HEADER" x="41.75" y="11.75"/>
-<element name="U1" library="blinkiverse" package="ARDUINO_LEONARDO-REV3B_SMARTPRJ_QFN44ML7X7" value="ARDUINO_LEONARDO-REV3B_SMARTPRJ_ATMEGA32U4-XUMU" x="32.5" y="21.9" smashed="yes" rot="R90"/>
+<element name="U1" library="blinkinlabs" package="ARDUINO_LEONARDO-REV3B_SMARTPRJ_QFN44ML7X7" value="ARDUINO_LEONARDO-REV3B_SMARTPRJ_ATMEGA32U4-XUMU" x="32.5" y="21.9" smashed="yes" rot="R90"/>
 <element name="C1" library="SparkFun" package="0805" value="16pf" x="41.25" y="18" smashed="yes" rot="R90"/>
 <element name="C2" library="SparkFun" package="0805" value="16pf" x="40.5" y="24.75" smashed="yes" rot="R180"/>
 <element name="R4" library="SparkFun" package="0805" value="10K" x="38" y="18" smashed="yes" rot="R90"/>
@@ -854,21 +854,21 @@ Please make sure your boards conform to these design rules.</description>
 <element name="J3" library="con-amp" package="520426-4" value="RS485" x="73.5" y="6.5" smashed="yes">
 <attribute name="VALUE" x="83.152" y="1.674" size="1.778" layer="27" rot="R90"/>
 </element>
-<element name="U$1" library="blinkiverse" package="TO252" value="N_MOSFET" x="74.5" y="59.75"/>
-<element name="U$3" library="blinkiverse" package="TO252" value="N_MOSFET" x="67.5" y="59.75"/>
-<element name="U$4" library="blinkiverse" package="TO252" value="N_MOSFET" x="60.5" y="59.75"/>
-<element name="U$5" library="blinkiverse" package="TO252" value="N_MOSFET" x="53.5" y="59.75"/>
-<element name="U$6" library="blinkiverse" package="TO252" value="N_MOSFET" x="38" y="59.75"/>
-<element name="U$7" library="blinkiverse" package="TO252" value="N_MOSFET" x="31" y="59.75"/>
-<element name="U$8" library="blinkiverse" package="TO252" value="N_MOSFET" x="24" y="59.75"/>
-<element name="U$9" library="blinkiverse" package="TO252" value="N_MOSFET" x="17" y="59.75"/>
+<element name="U$1" library="blinkinlabs" package="TO252" value="N_MOSFET" x="74.5" y="59.75"/>
+<element name="U$3" library="blinkinlabs" package="TO252" value="N_MOSFET" x="67.5" y="59.75"/>
+<element name="U$4" library="blinkinlabs" package="TO252" value="N_MOSFET" x="60.5" y="59.75"/>
+<element name="U$5" library="blinkinlabs" package="TO252" value="N_MOSFET" x="53.5" y="59.75"/>
+<element name="U$6" library="blinkinlabs" package="TO252" value="N_MOSFET" x="38" y="59.75"/>
+<element name="U$7" library="blinkinlabs" package="TO252" value="N_MOSFET" x="31" y="59.75"/>
+<element name="U$8" library="blinkinlabs" package="TO252" value="N_MOSFET" x="24" y="59.75"/>
+<element name="U$9" library="blinkinlabs" package="TO252" value="N_MOSFET" x="17" y="59.75"/>
 <element name="JP2" library="SparkFun" package="SCREWTERMINAL-3.5MM-8" value="" x="78" y="70.75" smashed="yes" rot="R180">
 <attribute name="VALUE" x="79.27" y="69.48" size="0.4064" layer="27" rot="R180"/>
 </element>
 <element name="JP3" library="SparkFun" package="SCREWTERMINAL-3.5MM-8" value="" x="41.5" y="70.75" smashed="yes" rot="R180">
 <attribute name="VALUE" x="42.77" y="69.48" size="0.4064" layer="27" rot="R180"/>
 </element>
-<element name="U$10" library="blinkiverse" package="IB_XLS-1W" value="DC_DC_ISOLATED_0505" x="53.5" y="36.25" rot="R270"/>
+<element name="U$10" library="blinkinlabs" package="IB_XLS-1W" value="DC_DC_ISOLATED_0505" x="53.5" y="36.25" rot="R270"/>
 <element name="C9" library="SparkFun" package="0805" value="4.7uF" x="57" y="35.5" smashed="yes" rot="R90">
 <attribute name="VALUE" x="58.397" y="34.484" size="0.4064" layer="27" rot="R90"/>
 </element>
@@ -953,7 +953,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="C26" library="SparkFun" package="PANASONIC_E" value="" x="8.25" y="15.5" smashed="yes">
 <attribute name="VALUE" x="6.98" y="12.96" size="0.4064" layer="27"/>
 </element>
-<element name="U$13" library="blinkiverse" package="OSHW-LOGO-L" value="" x="12.75" y="44.25"/>
+<element name="U$13" library="blinkinlabs" package="OSHW-LOGO-L" value="" x="12.75" y="44.25"/>
 </elements>
 <signals>
 <signal name="GND" class="1">
